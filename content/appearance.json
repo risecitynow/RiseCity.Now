@@ -1,6 +1,6 @@
 {
   "palette": {
-    "page_background": "#f5f5f5",
+    "page_background": "#FFFFFF",
     "body_text": "#101010",
     "muted_text": "#555553",
     "card_background": "#fafafa",
@@ -25,9 +25,9 @@
     "body_font": "DM Sans",
     "body_font_size": 16,
     "heading_scale": 100,
-    "body_line_height": 1.72,
+    "body_line_height": 1.2,
     "navigation_font_size": 12,
-    "letter_spacing": -8.2
+    "letter_spacing": -8
   },
   "layout": {
     "content_max_width": 1240,
@@ -48,88 +48,66 @@
   "sections": {
     "hero": {
       "visible": true,
-      "background_color": "",
-      "background_image": "",
       "image_opacity": 0,
       "image_position": "center",
       "order": 1
     },
     "ticker": {
       "visible": true,
-      "background_color": "",
-      "background_image": "",
       "image_opacity": 0,
       "image_position": "center",
       "order": 2
     },
     "message": {
       "visible": true,
-      "background_color": "",
-      "background_image": "",
       "image_opacity": 0,
       "image_position": "center",
       "order": 3
     },
     "story": {
       "visible": true,
-      "background_color": "",
-      "background_image": "",
       "image_opacity": 0,
       "image_position": "center",
       "order": 4
     },
     "heart": {
       "visible": true,
-      "background_color": "",
-      "background_image": "",
       "image_opacity": 0,
       "image_position": "center",
       "order": 5
     },
     "belief_preview": {
       "visible": true,
-      "background_color": "",
-      "background_image": "",
       "image_opacity": 0,
       "image_position": "center",
       "order": 6
     },
     "foundation": {
       "visible": true,
-      "background_color": "",
-      "background_image": "",
       "image_opacity": 0,
       "image_position": "center",
       "order": 7
     },
     "mission": {
       "visible": true,
-      "background_color": "",
-      "background_image": "",
       "image_opacity": 0,
       "image_position": "center",
       "order": 8
     },
     "connect": {
       "visible": true,
-      "background_color": "",
-      "background_image": "",
       "image_opacity": 0,
       "image_position": "center",
       "order": 9
     },
     "beliefs_hero": {
       "visible": true,
-      "background_color": "",
-      "background_image": "",
       "image_opacity": 0,
       "image_position": "center",
       "order": 1
     },
     "beliefs_body": {
       "visible": true,
-      "background_color": "",
-      "background_image": "",
       "image_opacity": 0,
       "image_position": "center",
       "order": 2
