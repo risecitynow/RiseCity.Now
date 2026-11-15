@@ -38,7 +38,7 @@
     "header_sticky": true,
     "smooth_scrolling": true,
     "hero_image_radius": 0,
-    "hero_image_display": "natural",
+    "hero_image_display": "cover",
     "story_image_style": "grayscale",
     "story_photo_position": "left",
     "pillars_columns_desktop": 3,
