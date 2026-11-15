@@ -1,0 +1,80 @@
+# RISE CITY — GitHub Pages Website
+
+A responsive, static, two-page church website built around your November 2026 Rise City branding.
+
+## Included
+
+- `index.html` — home, about, heart, 11-belief navigation, visit, connect
+- `beliefs.html` — full *What We Believe* statement: all 11 principles and Scripture references
+- `styles.css` — responsive layout and black-and-white visual identity
+- `script.js` — mobile navigation, current year, church contact/social link rendering
+- `site.config.js` — **edit this file first** to add service details and social media links
+- `404.html` — friendly missing-page screen
+- `.nojekyll` — helps GitHub Pages publish files directly
+- `assets/` — optimized files generated from your four uploaded images: RC monogram, Rise City wordmark, Rise City NOW banner, and portrait photo
+
+## Upload to GitHub (no developer tools required)
+
+1. Download and **unzip** `Rise-City-Updated-GitHub-Pages.zip` on your computer.
+2. Visit https://github.com/new and create a **Public** repository, such as `rise-city`.
+3. In your new repository, click **Add file → Upload files** (or the "uploading an existing file" link).
+4. Open the extracted folder. Select **everything inside** it — the `index.html` and `beliefs.html` files, `assets` folder, and other site files. Drag them onto GitHub. Do **not** upload only the outer folder or the ZIP.
+5. Click **Commit changes**.
+6. Go to **Settings → Pages**. Under *Build and deployment*, set **Source = Deploy from a branch**, **Branch = main**, **Folder = /(root)**, then Save.
+7. GitHub will provide a URL like `https://YOUR-USERNAME.github.io/rise-city/`.
+
+The site uses relative links (`beliefs.html`, `assets/...`), so it works both at a GitHub project URL and with a connected domain.
+
+## Add church information
+
+Open `site.config.js` in the repository, click the pencil icon, and edit the quoted strings. For example:
+
+```js
+window.RISE_CITY_CONFIG = {
+  gatheringDay: "Sundays",
+  gatheringTime: "2:00 PM",
+  address: "YOUR CONFIRMED STREET ADDRESS",
+  email: "hello@example.org",
+  phone: "",
+  instagram: "https://www.instagram.com/YOURHANDLE/",
+  facebook: "",
+  youtube: "",
+  givingUrl: ""
+};
+```
+
+The example above is illustrative; the downloaded file has unknown details **blank**. Unconfigured fields display a polite "coming soon" message or remain hidden. For social links and online giving, use full URLs beginning with `https://`.
+
+Changes to `site.config.js` take effect when GitHub Pages republishes your commit. If updating the ministry's location, change the `Houston, Texas / Hiram Clarke area` fallback text in `index.html` if that area is no longer accurate.
+
+## Custom domain (optional)
+
+1. In your repository, go to **Settings → Pages → Custom domain** and enter the domain you own, e.g. `risecitynow.com`. Save.
+2. At the domain DNS provider (GoDaddy, Squarespace Domains, Cloudflare, etc.), create these GitHub Pages **A** records for the root (`@`):
+
+   | Type | Host | Value |
+   |------|------|-------|
+   | A | @ | `185.199.108.153` |
+   | A | @ | `185.199.109.153` |
+   | A | @ | `185.199.110.153` |
+   | A | @ | `185.199.111.153` |
+
+3. Add a `www` **CNAME** pointing to `YOUR-USERNAME.github.io` (without `https://` and without the repository name).
+4. Remove any **conflicting** existing parking/website DNS records, but preserve mail service records (MX, SPF/DKIM, etc.).
+5. After DNS and certificate provisioning complete, enable **Enforce HTTPS** in GitHub Pages.
+
+Authoritative guide: https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site
+
+## How to edit the What We Believe page
+
+- All eleven beliefs are visible in **`beliefs.html`**, and the homepage links directly to each section.
+- Open `beliefs.html` in GitHub, click Edit, change only the text you need, and commit.
+- To edit the short homepage beliefs list, open `index.html` and find `belief-link-grid`.
+- This is a static website: it needs no database, build, paid hosting, or server-side code.
+
+## Technical notes
+
+- The header's social and contact data are set in `site.config.js`; no data is sent to an external service.
+- The site intentionally does not include a fake working contact form. GitHub Pages is static hosting and cannot receive form submissions by itself; a third-party form service can be connected later.
+- Uses web fonts when online and system sans-serif fallbacks otherwise.
+- The graphic assets have been optimized for fast page loading. All branded photographs/logos are from the four supplied images.
