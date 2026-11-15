@@ -198,22 +198,96 @@ body.cms-home main>.hero.wrap{width:min(var(--width),calc(100% - 80px));margin-i
 .story[data-image-side="right"] .story-grid > *{flex:1 1 0;min-width:0}
 .pillar p,.visit-card p,.calling-copy p,.story-copy>p{line-height:var(--cms-line-height)}
 
-/* RISE CITY — FULL WIDTH HERO FIX */
-html, body {
-  overflow-x: clip;
+
+/* FULL-BLEED HERO FIX — November 2026
+ * The page's .wrap constrains the welcome text, not the hero artwork.
+ * Expand the artwork to viewport width independently of the site's
+ * max-width content container, so "Cover" can actually reach both edges.
+ */
+html,body{overflow-x:clip}
+.hero .hero-banner{
+  width:100vw;
+  max-width:none;
+  margin-left:calc(50% - 50vw);
+  margin-right:calc(50% - 50vw);
+  border-radius:var(--cms-hero-radius,0px);
+}
+.hero .hero-banner-image{width:100%;height:auto;display:block;object-position:var(--cms-hero-object-position,center center)}
+.cms-hero-contained .hero .hero-banner{
+  width:100%;
+  margin-left:0;
+  margin-right:0;
+}
+/* Cover fills a wide, screen-scaled region. Natural displays the full art. */
+.cms-hero-cover .hero .hero-banner-image{
+  height:var(--cms-hero-desktop-height,clamp(340px,41.67vw,900px));
+  object-fit:cover;
+}
+.cms-hero-screen-height .hero .hero-banner-image{
+  height:var(--cms-hero-viewport-height,calc(100svh - 160px));
+  min-height:300px;
+  object-fit:cover;
+}
+@media(max-width:650px){
+  .hero .hero-banner{display:block;width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw)}
+  .cms-hero-contained .hero .hero-banner{width:100%;margin-left:0;margin-right:0}
+  /* Always show the entire logo by default on phones. */
+  .cms-hero-cover:not(.cms-hero-mobile-cover) .hero .hero-banner-image,
+  .cms-hero-screen-height:not(.cms-hero-mobile-cover) .hero .hero-banner-image{
+    height:auto;
+    min-height:0;
+    object-fit:contain;
+  }
+  .cms-hero-mobile-cover .hero .hero-banner-image{
+    height:var(--cms-hero-mobile-height,330px);
+    object-fit:cover;
+  }
 }
 
-.hero .hero-banner {
-  width: 100vw !important;
-  max-width: none !important;
-  margin-left: calc(50% - 50vw) !important;
-  margin-right: calc(50% - 50vw) !important;
-  border-radius: 0 !important;
+
+/* Repo-specific guarantee: hero artwork spans the viewport independently
+   of the inner 1240px content width. CMS Cover/Natural only controls cropping. */
+.hero {width:100%;max-width:none;margin-inline:0;}
+.hero > .hero-banner {width:100%;max-width:none;margin-inline:0;}
+.hero > .hero-banner > .hero-banner-image {display:block;width:100%;max-width:none;}
+.cms-hero-contained .hero > .hero-banner {width:min(var(--width),calc(100% - 80px));margin-inline:auto;}
+@media(max-width:650px){
+  .hero > .hero-banner{display:block!important;width:100%;margin-inline:0;}
+  .cms-hero-contained .hero > .hero-banner {width:calc(100% - 36px);margin-inline:auto;}
+  .hero > .hero-mobile-art {display:none!important;}
 }
 
-.hero .hero-banner-image {
-  display: block;
-  width: 100%;
-  height: auto;
+/* RISE CITY FOOTER LEGIBILITY — 2026-11-15
+ * Adapt the wordmark, main type, small print and dividers to the
+ * footer background selected in Pages CMS. The color values are set by
+ * cms-content.js after the appearance settings load. Defaults are
+ * white on the original black footer when offline/without CMS data.
+ */
+.footer {
+  color: var(--cms-footer-ink,#ffffff);
+  border-top:1px solid var(--cms-footer-rule,rgba(255,255,255,.22));
 }
-
+.footer .footer-top img {
+  filter: var(--cms-footer-logo-filter,invert(1));
+  opacity:1;
+}
+.footer .footer-motto {color:var(--cms-footer-ink,#ffffff);line-height:1.65}
+.footer .footer-motto span {color:var(--cms-footer-ink,#ffffff)}
+.footer .footer-bottom {
+  color:var(--cms-footer-muted,#bcbcbc);
+  border-top:1px solid var(--cms-footer-rule,rgba(255,255,255,.22));
+  font-size:12px;
+  line-height:1.65;
+  letter-spacing:.035em;
+}
+.footer .footer-bottom a {color:var(--cms-footer-ink,#ffffff);text-decoration:none}
+.footer .footer-bottom a:hover,.footer .footer-bottom a:focus-visible {
+  color:var(--cms-footer-ink,#ffffff);
+  text-decoration:underline;
+  text-underline-offset:4px;
+}
+@media(max-width:650px){
+  .footer .footer-motto{font-size:12px}
+  .footer .footer-bottom{font-size:11px}
+  .footer .footer-bottom>span:last-child{flex-wrap:wrap;gap:14px 20px}
+}

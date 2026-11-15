@@ -334,6 +334,24 @@ beliefs_end_label:'.beliefs-end>span',
       light_button_background:'--cms-light-btn-bg',light_button_text:'--cms-light-btn-ink',
       dark_background:'--cms-dark-bg',dark_text:'--cms-dark-ink',footer_background:'--cms-footer-bg'};
     for(const [key,css] of Object.entries(colors))if(color.test(p[key]||''))root.style.setProperty(css,p[key]);
+
+    // Footer colors must follow the editable footer background.
+    // A pale footer needs dark text/black logo; a dark footer needs
+    // white text/inverted logo. Use WCAG relative luminance to choose.
+    const footerBg=color.test(p.footer_background||'')?p.footer_background:'#090909';
+    function channel(v){const x=v/255;return x<=0.04045?x/12.92:Math.pow((x+0.055)/1.055,2.4);}
+    function luminance(hex){
+      let h=hex.slice(1,7);
+      if(h.length===3)h=h.split('').map(x=>x+x).join('');
+      const rgb=[0,2,4].map(i=>channel(parseInt(h.slice(i,i+2),16)));
+      return 0.2126*rgb[0]+0.7152*rgb[1]+0.0722*rgb[2];
+    }
+    const lightFooter=luminance(footerBg)>=0.18;
+    root.style.setProperty('--cms-footer-ink',lightFooter?'#111111':'#ffffff');
+    root.style.setProperty('--cms-footer-muted',lightFooter?'#383838':'#d6d6d6');
+    root.style.setProperty('--cms-footer-rule',lightFooter?'rgba(0,0,0,.20)':'rgba(255,255,255,.25)');
+    root.style.setProperty('--cms-footer-logo-filter',lightFooter?'none':'invert(1)');
+
     const fonts={Manrope:'"Manrope",Arial,sans-serif','DM Sans':'"DM Sans",Arial,sans-serif',
       Inter:'"Inter",Arial,sans-serif','Space Grotesk':'"Space Grotesk",Arial,sans-serif',
       Arial:'Arial,sans-serif',Georgia:'Georgia,serif','Playfair Display':'"Playfair Display",Georgia,serif'};
@@ -364,6 +382,19 @@ beliefs_end_label:'.beliefs-end>span',
     if(story){if(['grayscale','color','sepia'].includes(lay.story_image_style))story.dataset.imageStyle=lay.story_image_style;
       if(['left','right'].includes(lay.story_photo_position))story.dataset.imageSide=lay.story_photo_position;}
     if(lay.hero_image_display==='cover')root.classList.add('cms-hero-cover');
+    // Image *fit* and image *width* are separate controls.
+    // A full-width image must escape the 1240px page container.
+    if(lay.hero_image_width==='contained')root.classList.add('cms-hero-contained');
+    if(lay.hero_height_mode==='screen')root.classList.add('cms-hero-screen-height');
+    if(lay.hero_mobile_image_display==='cover')root.classList.add('cms-hero-mobile-cover');
+    if(['center','left','right'].includes(lay.hero_image_position))
+      root.style.setProperty('--cms-hero-object-position',lay.hero_image_position+' center');
+    const screenPercent=num(lay.hero_height_screen_percentage,40,100);
+    if(screenPercent!==null)
+      root.style.setProperty('--cms-hero-viewport-height',screenPercent+'svh');
+    const mobileHeight=num(lay.hero_mobile_cover_height,180,650);
+    if(mobileHeight!==null)
+      root.style.setProperty('--cms-hero-mobile-height',mobileHeight+'px');
     const sect=data.sections||{};
     const selectors={hero:'.hero',ticker:'.statement-bar',message:'.calling',story:'.story',
       heart:'.pillars',belief_preview:'.beliefs-preview',foundation:'.foundation',
