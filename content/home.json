@@ -5,7 +5,30 @@
     "verse": "“In the name of Jesus Christ of Nazareth rise up and walk.”",
     "invitation": "A call to rise in faith, walk with Jesus Christ, and carry His gospel all over the city."
   },
+  "headings": {
+    "message_line1": "RISE IN",
+    "message_outline": "FAITH.",
+    "message_line3": "WALK WITH",
+    "message_line4": "CHRIST.",
+    "story_line1": "A CITY",
+    "story_line2": "ON THE",
+    "story_outline": "RISE.",
+    "heart_line1": "WITH FAITH",
+    "heart_outline": "WE WALK.",
+    "belief_line1": "WHAT WE",
+    "belief_outline": "BELIEVE.",
+    "foundation_line1": "ONE GOD.",
+    "foundation_line2": "ONE FAITH.",
+    "foundation_outline": "ONE BAPTISM.",
+    "mission_line1": "THE GOSPEL.",
+    "mission_outline": "ALL OVER",
+    "mission_line2": "THE CITY.",
+    "connect_line1": "YOUR WALK",
+    "connect_line2": "WITH CHRIST",
+    "connect_line3": "MATTERS."
+  },
   "message": {
+    "scripture_quote": "“In the name of Jesus Christ of Nazareth rise up and walk.”",
     "lead": "Rise Up and Walk is more than a phrase. It is our invitation to a life transformed by Jesus Christ.",
     "paragraph_one": "In Acts 3, Peter spoke these words to a man who could not walk, and by the power of Jesus Christ, the man rose to his feet. His healing revealed the power of the name of Jesus.",
     "paragraph_two": "Inspired by this moment, Rise City calls people to respond to Jesus: to rise out of what has held them back, walk with Him in faith and obedience, and grow into the purpose He has for their lives.",
@@ -23,8 +46,7 @@
         "title": "Carry the gospel.",
         "description": "Share the hope of Jesus and serve others all over the city."
       }
-    ],
-    "scripture_quote": "“In the name of Jesus Christ of Nazareth rise up and walk.”"
+    ]
   },
   "story": {
     "lead": "We believe that in Jesus Christ, people can rise up and walk in newness of life.",
@@ -82,27 +104,5 @@
   "connect": {
     "invitation": "Ready to take a step of faith? Want to know more about following Jesus, share a prayer request, or help bring the gospel all over the city? We would love to connect with you.",
     "empty_contact_message": "Contact information and online links will be announced soon."
-  },
-  "headings": {
-    "message_line1": "RISE IN",
-    "message_outline": "FAITH.",
-    "message_line3": "WALK WITH",
-    "message_line4": "CHRIST.",
-    "story_line1": "A CITY",
-    "story_line2": "ON THE",
-    "story_outline": "RISE.",
-    "heart_line1": "A FAITH",
-    "heart_outline": "WE WALK.",
-    "belief_line1": "WHAT WE",
-    "belief_outline": "BELIEVE.",
-    "foundation_line1": "ONE GOD.",
-    "foundation_line2": "ONE FAITH.",
-    "foundation_outline": "ONE BAPTISM.",
-    "mission_line1": "THE GOSPEL.",
-    "mission_outline": "ALL OVER",
-    "mission_line2": "THE CITY.",
-    "connect_line1": "YOUR WALK",
-    "connect_line2": "WITH CHRIST",
-    "connect_line3": "MATTERS."
   }
 }
