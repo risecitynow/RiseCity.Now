@@ -1,0 +1,244 @@
+# Rise City visual editor at https://app.pagescms.org/
+media:
+  input: assets
+  output: /assets
+content:
+- name: homepage
+  label: Home page — edit wording
+  type: file
+  path: content/home.json
+  format: json
+  fields:
+  - name: hero
+    label: Opening message
+    type: object
+    fields:
+    - name: title_first
+      label: Main heading — first line
+      type: string
+    - name: title_second
+      label: Main heading — outlined line
+      type: string
+    - name: verse
+      label: Acts 3:6 quotation
+      type: text
+    - name: invitation
+      label: Welcome invitation
+      type: text
+  - name: message
+    label: Rise Up and Walk — meaning
+    type: object
+    fields:
+    - name: lead
+      label: Opening statement
+      type: text
+    - name: paragraph_one
+      label: The story in Acts 3
+      type: text
+    - name: paragraph_two
+      label: Rise City invitation
+      type: text
+    - name: paragraph_three
+      label: Walking and sharing
+      type: text
+    - name: steps
+      label: 'Three responses: Rise, Walk, Go'
+      type: object
+      list:
+        min: 3
+        max: 3
+        collapsible:
+          collapsed: true
+          summary: '{title}'
+      fields: &id001
+      - &id002
+        name: title
+        label: Title
+        type: string
+      - &id003
+        name: description
+        label: Description
+        type: text
+  - name: story
+    label: Our story
+    type: object
+    fields:
+    - name: lead
+      label: Opening statement
+      type: text
+    - name: paragraph_one
+      label: About Rise City
+      type: text
+    - name: paragraph_two
+      label: Our hope
+      type: text
+  - name: heart
+    label: Our heart
+    type: object
+    fields:
+    - name: introduction
+      label: Introduction
+      type: text
+    - name: pillars
+      label: Three pillars
+      type: object
+      list:
+        min: 3
+        max: 3
+        collapsible:
+          collapsed: true
+          summary: '{title}'
+      fields: *id001
+  - name: belief_preview
+    label: Beliefs summary on homepage
+    type: object
+    fields:
+    - name: lead
+      label: Short tagline
+      type: text
+    - name: introduction
+      label: Introduction
+      type: text
+  - name: foundation
+    label: Our foundation
+    type: object
+    fields:
+    - name: introduction
+      label: Statement
+      type: text
+  - name: mission
+    label: Citywide mission
+    type: object
+    fields:
+    - name: introduction
+      label: Introduction
+      type: text
+    - name: cards
+      label: Three mission points
+      type: object
+      list:
+        min: 3
+        max: 3
+        collapsible:
+          collapsed: true
+          summary: '{title}'
+      fields:
+      - *id002
+      - *id003
+      - name: tagline
+        label: Small tagline
+        type: string
+  - name: connect
+    label: Get connected
+    type: object
+    fields:
+    - name: invitation
+      label: Invitation text
+      type: text
+- name: beliefs
+  label: What We Believe — 11 articles
+  type: file
+  path: content/beliefs.json
+  format: json
+  fields:
+  - name: intro
+    label: Introduction
+    type: object
+    fields:
+    - name: subtitle
+      label: Tagline
+      type: text
+    - name: description
+      label: Introductory paragraph
+      type: text
+  - name: beliefs
+    label: The 11 beliefs
+    type: object
+    list:
+      min: 11
+      max: 11
+      collapsible:
+        collapsed: true
+        summary: '{title}'
+    fields:
+    - name: id
+      label: Section anchor (leave unchanged)
+      type: string
+      readonly: true
+    - name: title
+      label: Article title
+      type: string
+    - name: home_label
+      label: Short title on the homepage
+      type: string
+    - name: menu_label
+      label: Short title in the sidebar
+      type: string
+    - name: body
+      label: Full teaching
+      type: rich-text
+      options:
+        format: html
+    - name: scriptures
+      label: Scripture references
+      type: text
+  - name: foundation
+    label: Closing foundation statement
+    type: object
+    fields:
+    - name: paragraph_one
+      label: Foundation paragraph
+      type: text
+    - name: paragraph_two
+      label: Closing paragraph
+      type: text
+- name: settings
+  label: Photos, logos and contact links
+  type: file
+  path: content/settings.json
+  format: json
+  fields:
+  - name: images
+    label: Brand images — replace from media library
+    type: object
+    fields:
+    - name: hero_banner
+      label: Desktop banner
+      type: image
+    - name: mobile_wordmark
+      label: Rise City script / mobile logo
+      type: image
+    - name: people_photo
+      label: People portrait photo
+      type: image
+    - name: monogram
+      label: RC monogram
+      type: image
+    - name: social_preview
+      label: Social sharing image
+      type: image
+    - name: favicon
+      label: Browser icon
+      type: image
+  - name: contact
+    label: Contact and social accounts
+    type: object
+    fields:
+    - name: email
+      label: Public email
+      type: string
+    - name: phone
+      label: Phone (optional)
+      type: string
+    - name: instagram
+      label: Instagram URL
+      type: string
+    - name: facebook
+      label: Facebook URL
+      type: string
+    - name: youtube
+      label: YouTube URL
+      type: string
+    - name: giving_url
+      label: Giving URL
+      type: string
