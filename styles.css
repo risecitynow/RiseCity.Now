@@ -197,3 +197,23 @@ body.cms-home main>.hero.wrap{width:min(var(--width),calc(100% - 80px));margin-i
 .connect-grid h2 span,.foundation h2 span{-webkit-text-stroke-color:var(--cms-dark-ink)}
 .story[data-image-side="right"] .story-grid > *{flex:1 1 0;min-width:0}
 .pillar p,.visit-card p,.calling-copy p,.story-copy>p{line-height:var(--cms-line-height)}
+
+/* RISE CITY — FULL WIDTH HERO FIX */
+html, body {
+  overflow-x: clip;
+}
+
+.hero .hero-banner {
+  width: 100vw !important;
+  max-width: none !important;
+  margin-left: calc(50% - 50vw) !important;
+  margin-right: calc(50% - 50vw) !important;
+  border-radius: 0 !important;
+}
+
+.hero .hero-banner-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
