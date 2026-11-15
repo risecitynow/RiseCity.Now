@@ -10,7 +10,7 @@
     document.body.classList.toggle('menu-open',open);
   };
   btn?.addEventListener('click',()=>toggle(btn.getAttribute('aria-expanded')!=='true'));
-  menu?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>toggle(false)));
+  menu?.addEventListener('click',e=>{if(e.target.closest('a'))toggle(false)});
   document.addEventListener('keydown',e=>{if(e.key==='Escape')toggle(false)});
   window.matchMedia('(min-width:901px)').addEventListener('change',e=>{if(e.matches)toggle(false)});
   const year=document.querySelector('#year');

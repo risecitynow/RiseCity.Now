@@ -30,12 +30,13 @@
     if (/^https?:\/\//i.test(path)) return safeUrl(path);
     // Pages CMS outputs /assets/...; normalize to work both on custom domains
     // and GitHub Pages projects under /repository-name/.
-    return new URL(path.replace(/^\/+/,''), new URL('./', window.location.href)).href;
+    return new URL(path.replace(/^\/+/,''), new URL('./', document.baseURI)).href;
   }
   function applyHome(data) {
     if (!data || typeof data !== 'object') return;
     const h=data.hero||{}, m=data.message||{}, s=data.story||{}, t=data.heart||{},
           b=data.belief_preview||{}, f=data.foundation||{}, mission=data.mission||{}, c=data.connect||{};
+    applyHomeHeadings(data.headings||{});
     firstText('#hero-heading',h.title_first);
     text('#hero-heading .outline-word',h.title_second);
     firstText('.hero-verse',h.verse);
@@ -52,9 +53,16 @@
       ['.believers-intro .lead',b.lead],
       ['.believers-intro .intro-right > p',b.introduction],
       ['.foundation-bottom > p',f.introduction],
+      ['.calling-verse blockquote',m.scripture_quote],
+
+      ['.foundation-bottom small',f.verse_reference],
+      ['.story-footer > span strong',s.footer_line2],
+      ['.contact-muted',c.empty_contact_message],
       ['.visit-intro > p',mission.introduction],
       ['.connect-right > p',c.invitation]
     ]) text(selector,val);
+    firstText('.story-footer > span',s.footer_line1);
+    firstText('.foundation-bottom > span',f.verse);
     const fill = (arr, css, keys) => {
       if (!Array.isArray(arr)) return;
       const nodes=all(css);
@@ -87,8 +95,16 @@
   function applyBeliefs(data) {
     if (!data || typeof data !== 'object') return;
     const beliefs=Array.isArray(data.beliefs)?data.beliefs:[];
+    makeHeading('.bel-hero-title',[{text:data.intro?.title_first},{text:data.intro?.title_second,outlined:true}]);
+    text('.beliefs-aside h2',data.intro?.toc_heading);
     text('.bel-hero-sub',data.intro?.subtitle);
     text('.bel-hero-desc',data.intro?.description);
+    if(typeof data.foundation?.heading==='string'){
+      const target=one('.beliefs-end h2');if(target){target.replaceChildren();
+      data.foundation.heading.split('\n').forEach((line,i)=>{if(i)target.append(document.createElement('br'));target.append(document.createTextNode(line));});
+      }
+    }
+    text('.beliefs-end blockquote',data.foundation?.verse);
     text('.beliefs-end p:nth-of-type(1)',data.foundation?.paragraph_one);
     text('.beliefs-end p:nth-of-type(2)',data.foundation?.paragraph_two);
     beliefs.forEach((entry, i)=>{
@@ -119,7 +135,7 @@
       }
     });
   }
-  function applySettings(data) {
+  function applySettings(data, home) {
     if (!data || typeof data !== 'object') return;
     const images=data.images||{};
     const mapping={
@@ -146,7 +162,7 @@
       if(items.length){
         detail.replaceChildren();
         items.forEach(item=>{const a=document.createElement('a');a.href=item.href;a.textContent=item.label;detail.append(a);});
-      } else detail.innerHTML='<span class="contact-muted">Contact information and online links will be announced soon.</span>';
+      } else { detail.replaceChildren(); const span=document.createElement('span'); span.className='contact-muted'; span.textContent=home?.connect?.empty_contact_message || 'Contact information and online links will be announced soon.'; detail.append(span); }
     }
     const socials=one('#social-links');
     if(socials){
@@ -158,6 +174,219 @@
       }
     }
   }
+
+  // Lines of editable headings are text nodes, not editor-controlled HTML.
+  // The outlined line is kept as an actual styled <span>.
+  function makeHeading(selector,lines) {
+    const el=one(selector);
+    if(!el || !lines.some(x=>typeof x.text==='string')) return;
+    el.replaceChildren();
+    lines.forEach((line,i)=>{
+      if(i)el.append(document.createElement('br'));
+      const value=typeof line.text==='string'?line.text:'';
+      if(line.outlined){const sp=document.createElement('span');sp.className='outline-word';sp.textContent=value;el.append(sp);}
+      else el.append(document.createTextNode(value));
+    });
+  }
+  function mixHeading(selector,first,prefix,outlined) {
+    const el=one(selector); if(!el)return;
+    if(typeof first!=='string' || typeof prefix!=='string' || typeof outlined!=='string')return;
+    el.replaceChildren(document.createTextNode(first),document.createElement('br'),document.createTextNode(prefix+' '));
+    const span=document.createElement('span');span.className='outline-word';span.textContent=outlined;el.append(span);
+  }
+  function applyHomeHeadings(h) {
+    const line=(k)=>typeof h[k]==='string'?h[k]:null;
+    if(line('message_line1')!=null)makeHeading('#calling-heading',[
+      {text:line('message_line1')},{text:line('message_outline'),outlined:true},
+      {text:line('message_line3')},{text:line('message_line4')}]);
+    if(line('story_line1')!=null)mixHeading('#story-heading',line('story_line1'),line('story_line2'),line('story_outline'));
+    if(line('heart_line1')!=null)makeHeading('#heart-heading',[
+      {text:line('heart_line1')},{text:line('heart_outline'),outlined:true}]);
+    if(line('belief_line1')!=null)makeHeading('#beliefs-heading',[
+      {text:line('belief_line1')},{text:line('belief_outline'),outlined:true}]);
+    if(line('foundation_line1')!=null)makeHeading('#foundation-heading',[
+      {text:line('foundation_line1')},{text:line('foundation_line2')},{text:line('foundation_outline'),outlined:true}]);
+    if(line('mission_line1')!=null) {
+      const el=one('#mission-heading'); if(el){el.replaceChildren(document.createTextNode(line('mission_line1')),document.createElement('br'));
+        const outline=document.createElement('span');outline.className='outline-word';outline.textContent=line('mission_outline');
+        el.append(outline,document.createTextNode(' '+line('mission_line2')));
+      }
+    }
+    if(line('connect_line1')!=null)makeHeading('#connect-heading',[
+      {text:line('connect_line1')},{text:line('connect_line2')},{text:line('connect_line3'),outlined:true}]);
+  }
+  const safeHref=(val)=>{
+    if(typeof val!=='string'||!val.trim())return null;
+    const v=val.trim();
+    if(/^(mailto:|tel:)/i.test(v))return v;
+    if(/^\s*(?:javascript|data|vbscript):/i.test(v))return null;
+    if(/^#[-_a-z0-9]+$/i.test(v))return v;
+    if(/^(?:index|beliefs)\.html(?:#[-_a-z0-9]+)?$/i.test(v)){
+      return v.startsWith('index.html#') && !location.pathname.endsWith('beliefs.html')?v.slice('index.html'.length):v;
+    }
+    return safeUrl(v);
+  };
+  const setLink=(el, data)=>{
+    if(!el||!data||typeof data!=='object')return;
+    const dest=safeHref(data.url);
+    if(dest)el.setAttribute('href',dest);
+    if(typeof data.label==='string')firstTextIn(el,data.label);
+    if(/^https?:\/\//.test(dest||'')){el.setAttribute('rel','noopener noreferrer');}
+  };
+  function firstTextIn(el,value){
+    const node=[...el.childNodes].find(n=>n.nodeType===Node.TEXT_NODE && n.textContent.trim());
+    if(node)node.textContent=value+' ';
+    else el.insertBefore(document.createTextNode(value+' '),el.firstChild);
+  }
+  function applyChrome(data){
+    if(!data||typeof data!=='object')return;
+    const site=data.site||{};
+    const beliefsPage=location.pathname.endsWith('/beliefs.html');
+    const title=beliefsPage?site.beliefs_title:site.home_title;
+    if(typeof title==='string'&&title)document.title=title;
+    const description=beliefsPage?site.beliefs_description:site.home_description;
+    if(typeof description==='string'){
+      const meta=one('meta[name="description"]'); if(meta)meta.content=description;
+    }
+    if(typeof site.social_title==='string')all('meta[property="og:title"]').forEach(el=>el.content=site.social_title);
+    if(typeof site.social_description==='string')all('meta[property="og:description"]').forEach(el=>el.content=site.social_description);
+    const announce=data.announcement||{};
+    firstText('.topbar-inner>span:first-child',announce.left);
+    text('.topbar-inner>span:first-child .topline-star', '✳');
+    const top=one('.topbar-inner>span:first-child');
+    if(top && typeof announce.reference==='string'){
+      const star=one('.topline-star',top);
+      if(star){[...top.childNodes].filter(n=>n.nodeType===Node.TEXT_NODE).forEach((n,i)=>{if(i>0)n.textContent=' '+announce.reference;});}
+    }
+    text('.topbar-inner>span:last-child',announce.right);
+    const nav=data.navigation||{};
+    const wordmark=one('.brand span');
+    if(wordmark && typeof nav.wordmark_left==='string'){
+      wordmark.replaceChildren(document.createTextNode(nav.wordmark_left+' '));
+      const strong=document.createElement('strong');strong.textContent=nav.wordmark_right||'CITY';wordmark.append(strong);
+    }
+    if(Array.isArray(nav.links)&&nav.links.length){
+      const desktop=one('.nav-links'), mobile=one('#mobile-menu');
+      if(desktop)desktop.replaceChildren();
+      if(mobile)mobile.replaceChildren();
+      for(const item of nav.links){
+        const dest=safeHref(item?.url);if(!dest)continue;
+        const label=String(item.label||'Link');
+        if(desktop){const a=document.createElement('a');a.href=dest;a.textContent=label;
+          if((beliefsPage && dest.includes('beliefs.html'))||(!beliefsPage && ['index.html','#top'].includes(dest)))a.className='nav-active';
+          desktop.append(a);}
+        if(mobile){const a=document.createElement('a');a.href=dest;
+          a.append(document.createTextNode(label+' '));const arrow=document.createElement('span');arrow.setAttribute('aria-hidden','true');arrow.textContent='↗';a.append(arrow);mobile.append(a);}
+      }
+      if(mobile && typeof nav.cta_label==='string'){
+        const dest=safeHref(nav.cta_url)||'index.html#connect';
+        const a=document.createElement('a');a.href=dest;a.textContent=nav.cta_label+' ↗';mobile.append(a);
+
+      }
+    }
+    setLink(one('.nav-right > .btn'),{label:nav.cta_label,url:nav.cta_url});
+    const buttons=data.buttons||{};
+    for(const [key,sel] of Object.entries({hero_primary:'.hero-bottom-right .btn',
+      hero_secondary:'.hero-bottom-right .text-link',message_link:'.calling-copy .text-link',
+      beliefs_preview:'.believers-intro .intro-right .btn',connect:'.connect-right>.btn',
+      beliefs_back:'.bel-back-link'}))setLink(one(sel),buttons[key]);
+    const l=data.labels||{};
+    for(const [key,sel] of Object.entries({
+      hero_welcome:'.hero-topline > span:first-child',hero_reference:'.hero-topline > span:last-child',
+      hero_kicker:'.hero-message .section-kicker',message_kicker:'.calling .section-kicker',
+      story_kicker:'.story .section-kicker',heart_kicker:'.pillars .section-kicker',
+      beliefs_kicker:'.beliefs-preview .section-kicker',foundation_kicker:'.foundation .section-kicker',
+      mission_kicker:'.visit .section-kicker',connect_kicker:'.connect-section .section-kicker',
+      story_image_caption:'.image-corner',beliefs_page_kicker:'.bel-line > span:first-child',
+beliefs_end_label:'.beliefs-end>span',
+      verse_reference:'.calling-verse cite',verse_caption:'.calling-verse > span'
+    }))firstText(sel,l[key]);
+    const footer=data.footer||{};
+    const motto=one('.footer-motto');
+    if(motto && typeof footer.motto_first==='string'){
+      motto.replaceChildren(document.createTextNode(footer.motto_first),document.createElement('br'),
+        document.createTextNode(footer.motto_second||''),document.createElement('br'));
+      const span=document.createElement('span');span.textContent=footer.motto_third||'';motto.append(span);
+    }
+    const copyright=one('.footer-bottom>span:first-child');
+    if(copyright && typeof footer.copyright_text==='string'){
+      const currentYear=new Date().getFullYear();
+      copyright.replaceChildren(document.createTextNode('© '));
+      const year=document.createElement('span');year.id='year';year.textContent=String(currentYear);
+      copyright.append(year,document.createTextNode(' '+footer.copyright_text));
+    }
+    const footerLinks=all('.footer-bottom > span:last-child a');
+    if(footerLinks[0])footerLinks[0].textContent=footer.nav_beliefs_label||footerLinks[0].textContent;
+    if(footerLinks[1])footerLinks[1].textContent=footer.nav_mission_label||footerLinks[1].textContent;
+    if(footerLinks[2])footerLinks[2].textContent=footer.nav_back_label||footerLinks[2].textContent;
+
+  }
+  function applyAppearance(data){
+    if(!data||typeof data!=='object')return;
+    const root=document.documentElement, p=data.palette||{},ty=data.typography||{},lay=data.layout||{};
+    const color=/^#[a-f\d]{3}(?:[a-f\d]{3})?(?:[a-f\d]{2})?$/i;
+    const colors={page_background:'--cms-bg',body_text:'--cms-ink',muted_text:'--cms-muted',
+      card_background:'--cms-surface',alternate_background:'--cms-alt',divider:'--cms-border',
+      header_background:'--cms-header-bg',header_text:'--cms-header-ink',
+      announcement_background:'--cms-top-bg',announcement_text:'--cms-top-ink',
+      accent:'--cms-accent',outline_text:'--cms-outline',
+      button_background:'--cms-btn-bg',button_text:'--cms-btn-ink',
+      light_button_background:'--cms-light-btn-bg',light_button_text:'--cms-light-btn-ink',
+      dark_background:'--cms-dark-bg',dark_text:'--cms-dark-ink',footer_background:'--cms-footer-bg'};
+    for(const [key,css] of Object.entries(colors))if(color.test(p[key]||''))root.style.setProperty(css,p[key]);
+    const fonts={Manrope:'"Manrope",Arial,sans-serif','DM Sans':'"DM Sans",Arial,sans-serif',
+      Inter:'"Inter",Arial,sans-serif','Space Grotesk':'"Space Grotesk",Arial,sans-serif',
+      Arial:'Arial,sans-serif',Georgia:'Georgia,serif','Playfair Display':'"Playfair Display",Georgia,serif'};
+    if(fonts[ty.headings_font]){root.style.setProperty('--cms-headfont',fonts[ty.headings_font]);root.style.setProperty('--serif',fonts[ty.headings_font]);}
+    if(fonts[ty.body_font]){root.style.setProperty('--cms-bodyfont',fonts[ty.body_font]);root.style.setProperty('--sans',fonts[ty.body_font]);}
+    const num=(v,lo,hi)=>Number.isFinite(Number(v))?Math.max(lo,Math.min(hi,Number(v))):null;
+    const numberStyles=[['body_font_size','--cms-body-size',12,24,'px'],
+      ['heading_scale','--cms-heading-scale',65,150,'%'],['body_line_height','--cms-line-height',1.2,2.5,''],
+      ['navigation_font_size','--cms-nav-size',10,20,'px'],['letter_spacing','--cms-head-tracking',-12,3,'em']];
+    for(const [key,css,lo,hi,unit] of numberStyles){const n=num(ty[key],lo,hi);if(n!==null){
+      const val=key==='heading_scale'?String(n/100):key==='letter_spacing'?String(n/100)+'em':String(n)+unit;
+      root.style.setProperty(css,val);
+    }}
+    for(const [key,css,lo,hi,unit] of [
+      ['content_max_width','--width',860,1800,'px'],
+      ['section_padding_desktop','--cms-section-desktop',32,220,'px'],
+      ['section_padding_mobile','--cms-section-mobile',24,150,'px'],
+      ['button_corner_radius','--cms-radius-button',0,50,'px'],
+      ['card_corner_radius','--cms-radius-card',0,60,'px'],
+      ['hero_image_radius','--cms-hero-radius',0,65,'px'],
+      ['pillars_columns_desktop','--cms-pillars-columns',1,3,''],
+      ['mission_columns_desktop','--cms-mission-columns',1,3,'']
+    ]){const n=num(lay[key],lo,hi);if(n!==null)root.style.setProperty(css,String(n)+unit);}
+    if(lay.header_sticky===false){const header=one('.site-header');if(header)header.style.position='relative';}
+    if(lay.smooth_scrolling===false)root.style.scrollBehavior='auto';
+    if(lay.show_announcement_bar===false){const bar=one('.topline');if(bar)bar.hidden=true;}
+    const story=one('.story');
+    if(story){if(['grayscale','color','sepia'].includes(lay.story_image_style))story.dataset.imageStyle=lay.story_image_style;
+      if(['left','right'].includes(lay.story_photo_position))story.dataset.imageSide=lay.story_photo_position;}
+    if(lay.hero_image_display==='cover')root.classList.add('cms-hero-cover');
+    const sect=data.sections||{};
+    const selectors={hero:'.hero',ticker:'.statement-bar',message:'.calling',story:'.story',
+      heart:'.pillars',belief_preview:'.beliefs-preview',foundation:'.foundation',
+      mission:'.visit',connect:'.connect-section',beliefs_hero:'.beliefs-hero',beliefs_body:'.beliefs-body'};
+    if(one('.hero'))document.body.classList.add('cms-home');
+    for(const [key,selector] of Object.entries(selectors)){
+      const el=one(selector), section=sect[key]||{};if(!el)continue;
+      el.dataset.cmsSection=key;
+      if(section.visible===false)el.hidden=true;
+      if(color.test(section.background_color||''))el.style.backgroundColor=section.background_color;
+      if(el.parentElement?.tagName==='MAIN'){
+        const n=num(section.order,1,15);if(n!==null)el.style.order=String(n);
+      }
+      const bg=resolveAsset(section.background_image);
+      if(bg){el.dataset.hasBackgroundImage='true';el.style.setProperty('--cms-section-image','url("'+bg.replace(/["\\]/g,'')+'")');
+        el.style.setProperty('--cms-image-opacity',String(num(section.image_opacity,0,100)/100));
+        if(['center','top','bottom','left','right'].includes(section.image_position))el.style.setProperty('--cms-section-position',section.image_position);
+      }
+    }
+    const themeMeta=one('meta[name="theme-color"]');
+    if(themeMeta && color.test(p.header_background||''))themeMeta.content=p.header_background;
+  }
+
   async function read(name){
     try {
       const response=await fetch('content/'+name+'.json',{cache:'no-cache'});
@@ -165,10 +394,12 @@
       return await response.json();
     }catch(err){console.warn('Rise City CMS: fallback HTML used for '+name,err);return null;}
   }
-  Promise.all([read('home'),read('beliefs'),read('settings')]).then(([home,beliefs,settings])=>{
+  Promise.all([read('home'),read('beliefs'),read('settings'),read('appearance'),read('chrome')]).then(([home,beliefs,settings,appearance,chrome])=>{
+    if(appearance) applyAppearance(appearance);
     if(home) applyHome(home);
     if(beliefs) applyBeliefs(beliefs);
-    if(settings) applySettings(settings);
+    if(chrome) applyChrome(chrome);
+    if(settings) applySettings(settings,home);
     window.dispatchEvent(new CustomEvent('risecity:content-loaded'));
   });
 })();

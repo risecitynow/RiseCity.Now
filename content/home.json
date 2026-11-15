@@ -23,12 +23,15 @@
         "title": "Carry the gospel.",
         "description": "Share the hope of Jesus and serve others all over the city."
       }
-    ]
+    ],
+    "scripture_quote": "“In the name of Jesus Christ of Nazareth rise up and walk.”"
   },
   "story": {
     "lead": "We believe that in Jesus Christ, people can rise up and walk in newness of life.",
     "paragraph_one": "Our name is inspired by Acts 3:6. We are a Jesus-centered Apostolic church calling people to rise in faith, walk with Christ, and discover the transforming power of His Word and Spirit.",
-    "paragraph_two": "As we follow Jesus together, we want to see lives restored, families strengthened, and disciples equipped to share the gospel all over the city."
+    "paragraph_two": "As we follow Jesus together, we want to see lives restored, families strengthened, and disciples equipped to share the gospel all over the city.",
+    "footer_line1": "ONE CHURCH. ONE MISSION.",
+    "footer_line2": "JESUS AT THE CENTER."
   },
   "heart": {
     "introduction": "We are committed to the same truth, power, and transforming experience found in the New Testament church.",
@@ -52,7 +55,9 @@
     "introduction": "Our faith is built upon the unchanging Word of God and the teachings of Jesus Christ and His apostles. We believe the same truth, power, and transforming experience found in the New Testament church are available to every generation."
   },
   "foundation": {
-    "introduction": "We are committed to preserving the Apostolic message, living a Spirit-filled life, and continuing the mission of the New Testament church."
+    "introduction": "We are committed to preserving the Apostolic message, living a Spirit-filled life, and continuing the mission of the New Testament church.",
+    "verse": "“One Lord, one faith, one baptism, One God and Father of all...”",
+    "verse_reference": "EPHESIANS 4:5–6 (KJV)"
   },
   "mission": {
     "introduction": "We rise in faith and walk with Christ so that others can encounter Him too. Our mission is to share the good news of Jesus all over the city and make disciples who follow Him every day.",
@@ -75,6 +80,29 @@
     ]
   },
   "connect": {
-    "invitation": "Ready to take a step of faith? Want to know more about following Jesus, share a prayer request, or help bring the gospel all over the city? We would love to connect with you."
+    "invitation": "Ready to take a step of faith? Want to know more about following Jesus, share a prayer request, or help bring the gospel all over the city? We would love to connect with you.",
+    "empty_contact_message": "Contact information and online links will be announced soon."
+  },
+  "headings": {
+    "message_line1": "RISE IN",
+    "message_outline": "FAITH.",
+    "message_line3": "WALK WITH",
+    "message_line4": "CHRIST.",
+    "story_line1": "A CITY",
+    "story_line2": "ON THE",
+    "story_outline": "RISE.",
+    "heart_line1": "A FAITH",
+    "heart_outline": "WE WALK.",
+    "belief_line1": "WHAT WE",
+    "belief_outline": "BELIEVE.",
+    "foundation_line1": "ONE GOD.",
+    "foundation_line2": "ONE FAITH.",
+    "foundation_outline": "ONE BAPTISM.",
+    "mission_line1": "THE GOSPEL.",
+    "mission_outline": "ALL OVER",
+    "mission_line2": "THE CITY.",
+    "connect_line1": "YOUR WALK",
+    "connect_line2": "WITH CHRIST",
+    "connect_line3": "MATTERS."
   }
 }

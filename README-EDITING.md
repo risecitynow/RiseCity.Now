@@ -1,54 +1,102 @@
-# Rise City — editable GitHub Pages website
+# Rise City — Editable Design Studio for GitHub Pages
 
-This is **the same Rise City HTML website, updated with seamless cool-gray artwork blending** (black-and-white branding, Acts 3:6 hero, citywide mission, photos, and all 11 Apostolic beliefs), with an added **Pages CMS** editing layer. The visual layout, responsive CSS, existing HTML elements and assets are preserved.
+This is the same Rise City site using the latest supplied Rise City artwork and
+"Rise Up and Walk" (Acts 3:6) message. It is static HTML/CSS/JavaScript,
+editable with Pages CMS, and can be hosted free on GitHub Pages.
 
-## Publish once to GitHub
+## Important: updating an EXISTING GitHub repository
 
-1. Unzip this package and open the extracted folder.
-2. In your existing Rise City GitHub repository, upload **all contents** from the extracted folder, including the hidden `.pages.yml` file, `content` folder, `assets` folder, and `cms-content.js`. **Do not** upload the zip itself. Replace previous versions of `index.html`, `beliefs.html`, and other matching files.
-3. In GitHub **Settings → Pages**, choose **Deploy from a branch**, `main`, `/(root)`. If this was already set, leave it as-is.
-4. When your GitHub Pages link loads, confirm the design works. Keep your existing custom domain settings; the package does not change DNS or your existing CNAME file.
+1. **Keep your existing `CNAME` file** if you already have a custom domain.
+   This package intentionally does not include or replace it.
+2. Upload or replace the files inside this package **at the repository root**
+   (the same level as `index.html`). Preserve the `assets/` and `content/` folders.
+3. The config `.pages.yml` is hidden by default on macOS. To show hidden files
+   in Finder press `Command + Shift + .` (period). Verify `.pages.yml` appears
+   in your GitHub repository, alongside `index.html`.
+4. If `.pages.yml` is missing, open the repository's **Add file > Create new file**,
+   enter `.pages.yml` as its filename, and paste the contents of
+   `Rise-City-Pages-CMS-Updated-Config.txt` (also provided separately).
+   If `.pages.yml` already exists, open it on GitHub, click the pencil icon,
+   replace all its text with the updated config, then commit.
+5. Commit changes. Confirm GitHub **Settings > Pages** is set to
+   **Deploy from branch / main / (root)**, unless you already have working
+   Pages settings for your custom domain.
+6. In <https://app.pagescms.org/>, select the repository and `main` branch.
+   Reload Pages CMS to display the expanded fields.
 
-**Important if replacing an existing GitHub Pages repository with a custom domain:** Preserve the existing `CNAME` file. You may also include the correct `CNAME` in the new upload. Do not remove it when replacing site files.
+Do not upload the ZIP itself to the GitHub repository. Unzip first.
 
-## Activate your no-code content editor
+## New editable areas
 
-1. Open **https://app.pagescms.org/**.
-2. Sign in with the GitHub account used for Rise City.
-3. Authorize/install the Pages CMS GitHub app. Grant it access only to the Rise City repository if you prefer.
-4. Open the Rise City repository and its publishing branch (`main`). Pages CMS will detect `.pages.yml`.
-5. You will see three editors:
-   - **Home page — edit wording**: Acts 3:6 introduction, our story, mission, faith, and connection copy.
-   - **What We Believe — 11 articles**: edit each full belief using a rich-text editor, plus its scripture references and section labels.
-   - **Photos, logos and contact links**: choose/upload replacement assets, email, social profiles and giving link.
-6. Edit a field and **Save**. Pages CMS commits the JSON change to GitHub, and GitHub Pages then serves the new content. No FTP, command line or HTML editing needed for ordinary updates.
+**01 — APPEARANCE & LAYOUT** (`content/appearance.json`)
+- 19 global colors: page background, headings/outline, paragraphs, navigation,
+  announcement strip, dark sections, buttons, cards, borders and footer
+- Heading and body font selection, text size, letter spacing, line height
+- Container width, section spacing, button/card rounding, hero image options
+- Sticky header and smooth scrolling
+- Photo treatment and side placement in Our Story
+- Desktop columns for Our Heart and Mission cards
+- Every section: show/hide toggle, optional background photo, photo opacity,
+  background color and page ordering
 
-### Images and links
+For **background color** in a specific section, leave the value blank to inherit
+from the global palette. To override just that section, enter a hex color like
+`#EDEDED`.
 
-The images are stored in `assets/`; you can select existing images or upload new ones through Pages CMS. To preserve the current branding, keep them unchanged unless desired. For a GitHub Pages repository under `username.github.io/rise-city/`, image paths are normalized by `cms-content.js` so they work whether your repository uses a GitHub project URL or your custom domain.
+**02 — HOMEPAGE TEXT** (`content/home.json`)
+- Main headings in every section, welcome and Scripture quotations
+- The Rise Up and Walk narrative, steps, story, heart, mission, CTA text
+- Foundation Scripture and story/mission details
 
-Only enter an email/phone/social URL when it is ready to be public. Empty fields remain hidden. The site deliberately contains no neighborhood, street address or meeting location.
+**03 — WHAT WE BELIEVE** (`content/beliefs.json`)
+- All 11 doctrinal articles (rich-text editing), titles, citations and navigation
+- Intro/closing texts and headings
+- The full teaching is preserved from the previous site.
 
-### Check before sharing
+**04 — NAVIGATION, BUTTONS & SEO** (`content/chrome.json`)
+- Desktop/mobile menu labels and URLs
+- All major buttons and target links
+- Announcement bar, section labels, image caption, footer
+- Browser title/description and social metadata fields
 
-- Open the main page and **What We Believe** on phone and desktop after a change.
-- If you edit the appearance/layout (rather than text/images), change `styles.css` or the page templates manually.
-- This is a **form-based content editor**, not an in-page drag-and-drop website designer.
-- Changes to HTML meta descriptions/social previews may need HTML editing for search crawlers; the default metadata remains the original Rise City theme.
-- Keep the `content` JSON files and `cms-content.js` together, since the published pages use both.
+**05 — IMAGES & CONTACT** (`content/settings.json`)
+- Hero image, RC mark, portrait, footer wordmark, sharing image and favicon
+- Email, phone, Instagram, Facebook, YouTube and giving URL
 
-## Preview locally
+## Important design notes
 
-Opening `index.html` as a `file://` URL shows its original fallback text. To see edits to `content/*.json` locally, run `python3 -m http.server 8000` from the extracted folder and open `http://localhost:8000/`. Ordinary publishing does **not** require Python; GitHub Pages serves the files as static content.
+- Pages CMS is a **field-based editor**, not a drag-and-drop page canvas.
+- **Colors use hex text fields** (`#F5F5F5`), not a built-in color picker.
+- New background images appear behind a section with configurable opacity.
+  For readable text, start with a low image opacity (10–25%).
+- Large font sizes or reordered sections may require design review afterward.
+- The hero is the exact supplied artwork by default, shown unaltered.
+- Contact links appear only once entered; no physical location is stated.
+- Layout and content are updated on the live website after GitHub Pages deploys.
+- Client-side edits to SEO/social meta tags might **not** be read by search
+  crawlers or social scrapers. To change public social previews reliably,
+  edit the static `<head>` tags in the HTML too, or introduce a build step.
 
-## FAQ
+## Test locally
 
-**Will the site look the same?** Yes: the original design and image positions are retained, with updated background tones and softened image edges for a more seamless appearance. The editable layer updates text and selected image URLs inside the existing layout.
+Run `python3 -m http.server 8000` in the extracted folder, then open
+<http://localhost:8000/>. Opening `index.html` directly using `file://` may
+prevent JSON from loading due to browser security restrictions.
 
-**Do I need WordPress or WXR?** No.
+## Key files
 
-**Can I use Publii instead?** Publii is a good offline static editor, but using this identical design in Publii requires converting the site into a native Publii theme. Pages CMS edits your existing GitHub files directly, so it is the easier fit.
+- `index.html`, `beliefs.html` — page structures
+- `styles.css` — design and responsive layout
+- `cms-content.js` — applies all CMS JSON settings to the site
+- `script.js` — mobile navigation
+- `.pages.yml` — Pages CMS editor schema (in repository root)
+- `content/*.json` — editable content and appearance
+- `assets/*` — brand images and photos
+- `.nojekyll` — disables Jekyll processing on GitHub Pages
 
-**Will this cost money?** GitHub Pages public-repository hosting and the hosted Pages CMS entry point are free to get started; check the providers' current terms for usage or team features.
+## Safety
 
-**Which version is this?** Rise City — Rise Up and Walk (Acts 3:6), last GitHub Pages edition prior to the WordPress/WXR conversion.
+Keep a copy of the current GitHub repository or create a new branch before
+uploading this version. The package does **not** include `CNAME`; retain the
+existing repository copy. If a previous upload left a `site.config.js`, it is
+not used by this version and may be left in place or deleted separately.

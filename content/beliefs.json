@@ -1,7 +1,10 @@
 {
   "intro": {
     "subtitle": "Rooted in Scripture. Centered on Jesus. Empowered by the Spirit.",
-    "description": "Our faith is built upon the unchanging Word of God and the teachings of Jesus Christ and His apostles. We believe the same truth, power, and transforming experience found in the New Testament church are available to every generation."
+    "description": "Our faith is built upon the unchanging Word of God and the teachings of Jesus Christ and His apostles. We believe the same truth, power, and transforming experience found in the New Testament church are available to every generation.",
+    "title_first": "WHAT WE",
+    "title_second": "BELIEVE.",
+    "toc_heading": "EXPLORE OUR BELIEFS"
   },
   "beliefs": [
     {
@@ -95,6 +98,8 @@
   ],
   "foundation": {
     "paragraph_one": "We are committed to preserving the Apostolic message, living a Spirit-filled life, and continuing the mission of the New Testament church.",
-    "paragraph_two": "We believe the gospel still changes lives, the Holy Ghost still fills believers, miracles still happen, and Jesus Christ is still building His church."
+    "paragraph_two": "We believe the gospel still changes lives, the Holy Ghost still fills believers, miracles still happen, and Jesus Christ is still building His church.",
+    "heading": "One God. One Faith.\nOne Baptism.",
+    "verse": "“One Lord, one faith, one baptism, One God and Father of all...” — Ephesians 4:5–6 (KJV)"
   }
 }

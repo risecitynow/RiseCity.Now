@@ -1,0 +1,92 @@
+{
+  "site": {
+    "name": "Rise City",
+    "home_title": "Rise City | Rise Up and Walk",
+    "home_description": "Rise City is an Apostolic church built around the call of Acts 3:6: Rise up and walk with Christ. Sharing the gospel all over the city.",
+    "beliefs_title": "What We Believe | Rise City",
+    "beliefs_description": "What We Believe at Rise City: our 11 foundational Apostolic beliefs, from Scripture and the Oneness of God to salvation, worship, miracles, the return of Christ and eternity.",
+    "social_title": "Rise City | Rise Up and Walk",
+    "social_description": "Rise Up and Walk. Acts 3:6. Rise in faith, walk with Christ, and share His gospel all over the city."
+  },
+  "announcement": {
+    "left": "RISE UP AND WALK.",
+    "reference": "ACTS 3:6",
+    "right": "SHARING THE GOSPEL ALL OVER THE CITY"
+  },
+  "navigation": {
+    "wordmark_left": "RISE",
+    "wordmark_right": "CITY",
+    "links": [
+      {
+        "label": "Home",
+        "url": "index.html"
+      },
+      {
+        "label": "Our Story",
+        "url": "index.html#our-story"
+      },
+      {
+        "label": "What We Believe",
+        "url": "beliefs.html"
+      },
+      {
+        "label": "Our Mission",
+        "url": "index.html#mission"
+      }
+    ],
+    "cta_label": "Get Connected",
+    "cta_url": "index.html#connect"
+  },
+  "buttons": {
+    "hero_primary": {
+      "label": "Our Message",
+      "url": "#rise-and-walk"
+    },
+    "hero_secondary": {
+      "label": "What We Believe",
+      "url": "beliefs.html"
+    },
+    "message_link": {
+      "label": "Explore Our Apostolic Faith",
+      "url": "beliefs.html"
+    },
+    "beliefs_preview": {
+      "label": "Explore All 11 Beliefs",
+      "url": "beliefs.html"
+    },
+    "connect": {
+      "label": "See What We Believe",
+      "url": "beliefs.html"
+    },
+    "beliefs_back": {
+      "label": "BACK TO RISE CITY HOME",
+      "url": "index.html"
+    }
+  },
+  "labels": {
+    "hero_welcome": "WELCOME TO RISE CITY",
+    "hero_reference": "OUR CALL • ACTS 3:6",
+    "hero_kicker": "OUR CENTRAL THEME / ACTS 3:6",
+    "message_kicker": "THE MEANING BEHIND OUR NAME / ACTS 3:6",
+    "story_kicker": "WHO WE ARE / 02",
+    "story_image_caption": "THE GOSPEL FOR EVERYONE",
+    "heart_kicker": "THE HEART OF RISE CITY / 03",
+    "beliefs_kicker": "THE FOUNDATION OF OUR FAITH / 04",
+    "foundation_kicker": "OUR FOUNDATION",
+    "mission_kicker": "THE MISSION OF RISE CITY / 05",
+    "connect_kicker": "LET'S CONNECT / 06",
+    "beliefs_page_kicker": "WHAT WE BELIEVE",
+    "beliefs_end_label": "OUR FOUNDATION",
+    "verse_reference": "ACTS 3:6 • KJV",
+    "verse_caption": "OUR INSPIRATION"
+  },
+  "footer": {
+    "motto_first": "RISE UP AND WALK.",
+    "motto_second": "ACTS 3:6",
+    "motto_third": "WALK WITH CHRIST.",
+    "copyright_text": "RISE CITY • RISE UP AND WALK • ACTS 3:6",
+    "nav_beliefs_label": "WHAT WE BELIEVE",
+    "nav_mission_label": "OUR MISSION",
+    "nav_back_label": "BACK TO TOP ↑"
+  }
+}

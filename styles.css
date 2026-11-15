@@ -89,3 +89,111 @@ body { background:var(--paper); }
   .hero-banner-image{width:100%;height:auto;display:block}
   .hero-mobile-art{display:none!important}
 }
+
+
+/* Editable Design Studio — styles are driven by content/appearance.json.
+   CSS variables retain current branding defaults until the JSON loads. */
+:root{
+ --cms-bg:#f5f5f5;--cms-ink:#101010;--cms-muted:#555553;
+ --cms-surface:#fafafa;--cms-alt:#efefef;--cms-border:#dddddd;
+ --cms-header-bg:#f5f5f5;--cms-header-ink:#101010;
+ --cms-top-bg:#080808;--cms-top-ink:#d3d3d0;
+ --cms-accent:#111111;--cms-outline:#111111;
+ --cms-btn-bg:#0c0c0c;--cms-btn-ink:#ffffff;
+ --cms-light-btn-bg:#ffffff;--cms-light-btn-ink:#080808;
+ --cms-dark-bg:#090909;--cms-dark-ink:#ffffff;
+ --cms-footer-bg:#f5f5f5;
+ --cms-heading-scale:1;--cms-body-size:16px;--cms-line-height:1.72;
+ --cms-nav-size:12px;--cms-head-tracking:-.082em;
+ --cms-section-desktop:130px;--cms-section-mobile:78px;
+ --cms-radius-card:0px;--cms-radius-button:0px;
+ --cms-headfont:'Manrope',Arial,sans-serif;
+ --cms-bodyfont:'DM Sans',Arial,sans-serif;
+}
+body{background:var(--cms-bg);color:var(--cms-ink);font-family:var(--cms-bodyfont);font-size:var(--cms-body-size)}
+body p{line-height:var(--cms-line-height)}
+.site-header{background:var(--cms-header-bg);color:var(--cms-header-ink);border-color:var(--cms-border)}
+.topline{background:var(--cms-top-bg);color:var(--cms-top-ink)}
+.topline-star{color:var(--cms-top-ink)}
+.nav-links a{font-size:var(--cms-nav-size)}
+.btn{border-radius:var(--cms-radius-button)}
+.btn-black{background:var(--cms-btn-bg);border-color:var(--cms-btn-bg);color:var(--cms-btn-ink)}
+.btn-white{background:var(--cms-light-btn-bg);border-color:var(--cms-light-btn-bg);color:var(--cms-light-btn-ink)}
+.hero,.calling,.story,.beliefs-preview,.visit,.beliefs-body,.beliefs-hero{background:var(--cms-bg)}
+.pillars{background:var(--cms-alt)}
+.pillar,.visit-card,.calling-steps article,.beliefs-end,.story-image-wrap{background:var(--cms-surface);border-radius:var(--cms-radius-card)}
+.image-corner{background:var(--cms-bg)}
+.foundation{background:var(--cms-dark-bg);color:var(--cms-dark-ink)}
+.connect-section{background:var(--cms-dark-bg);color:var(--cms-dark-ink)}
+.statement-bar{background:var(--cms-dark-bg);color:var(--cms-dark-ink)}
+.footer{background:var(--cms-footer-bg)}
+.bel-theme{background:var(--cms-alt)}
+.short-rule,.line-mark,.pillar-line,.pulse-dot,.nav-links .nav-active:after{background:var(--cms-accent)}
+.outline-word{color:transparent;-webkit-text-stroke:1.65px var(--cms-outline)}
+.story-copy > p:not(.lead),.intro-right p,.split-heading > p,.visit-intro > p,.pillar p,.visit-card p,.calling-copy p:not(.lead),.hero-invitation{color:var(--cms-muted)!important}
+.hero-verse,.calling-copy .lead{color:var(--cms-ink)!important}
+.section-pad{padding-block:var(--cms-section-desktop)}
+.display,.hero h1,.foundation h2,.connect-grid h2,.bel-hero-title{font-family:var(--cms-headfont);letter-spacing:var(--cms-head-tracking)}
+.display{font-size:calc(var(--cms-heading-scale) * clamp(60px,7vw,100px))}
+.hero h1{font-size:calc(var(--cms-heading-scale) * clamp(60px,7.6vw,114px))}
+.calling-lead h2{font-size:calc(var(--cms-heading-scale) * clamp(62px,6.2vw,93px))}
+.story .display{font-size:calc(var(--cms-heading-scale) * clamp(56px,6.5vw,94px))}
+.split-heading .display{font-size:calc(var(--cms-heading-scale) * clamp(56px,7.6vw,110px))}
+.believers-intro .display{font-size:calc(var(--cms-heading-scale) * clamp(60px,7.1vw,109px))}
+.foundation h2{font-size:calc(var(--cms-heading-scale) * clamp(65px,10vw,153px))}
+.visit-intro .display{font-size:calc(var(--cms-heading-scale) * clamp(54px,7.7vw,111px))}
+.connect-grid h2{font-size:calc(var(--cms-heading-scale) * clamp(58px,7.6vw,112px))}
+.bel-hero-title{font-size:calc(var(--cms-heading-scale) * clamp(65px,9vw,135px))}
+.hero-banner{border-radius:var(--cms-hero-radius,0px)}
+.hero-banner-image{border-radius:var(--cms-hero-radius,0px)}
+.story[data-image-side="right"] .story-grid>.story-image-wrap{order:2}
+.story[data-image-side="right"] .story-grid>.story-copy{order:1}
+.story[data-image-side="right"] .story-grid{display:flex;flex-direction:row;align-items:center}
+.story[data-image-style="color"] .story-image-wrap>img{filter:none}
+.story[data-image-style="sepia"] .story-image-wrap>img{filter:sepia(65%)}
+.story[data-image-style="grayscale"] .story-image-wrap>img{filter:grayscale(100%)}
+body.cms-home main{display:flex;flex-direction:column;align-items:stretch}
+body.cms-home main>section,body.cms-home main>.statement-bar{flex:none;min-width:0}
+body.cms-home main>.hero.wrap{width:min(var(--width),calc(100% - 80px));margin-inline:auto}
+[data-cms-section][hidden], .topline[hidden]{display:none!important}
+/* Optional section photographs, with adjustable opacity (content stays readable). */
+[data-cms-section]{position:relative;isolation:isolate}
+[data-cms-section][data-has-background-image="true"]:before{
+ content:"";position:absolute;inset:0;z-index:-1;
+ background-image:var(--cms-section-image);background-position:var(--cms-section-position,center);
+ background-size:cover;background-repeat:no-repeat;
+ opacity:var(--cms-image-opacity,0);
+ pointer-events:none
+}
+[data-cms-section]>*{position:relative;z-index:1}
+.cms-no-motion *{transition:none!important;animation:none!important}
+.cms-no-motion{scroll-behavior:auto}
+@media(max-width:900px){
+ .mobile-menu{background:var(--cms-header-bg)}
+ body.cms-home main>.hero.wrap{width:min(100% - 44px,var(--width))}
+ .story[data-image-side="right"] .story-grid{flex-direction:column}
+}
+@media(max-width:650px){
+ .section-pad{padding-block:var(--cms-section-mobile)}
+ body.cms-home main>.hero.wrap{width:calc(100% - 36px)}
+ .hero h1{font-size:calc(var(--cms-heading-scale) * clamp(46px,11vw,72px))}
+ .calling-lead h2{font-size:calc(var(--cms-heading-scale) * clamp(55px,11.5vw,76px))}
+ .story .display,.split-heading .display,.visit-intro .display{font-size:calc(var(--cms-heading-scale) * clamp(55px,11.6vw,79px))}
+ .believers-intro .display{font-size:calc(var(--cms-heading-scale) * clamp(58px,11.3vw,85px))}
+ .foundation h2{font-size:calc(var(--cms-heading-scale) * clamp(47px,11.8vw,78px))}
+ .connect-grid h2{font-size:calc(var(--cms-heading-scale) * clamp(55px,12vw,81px))}
+ .bel-hero-title{font-size:calc(var(--cms-heading-scale) * clamp(62px,13vw,86px))}
+}
+
+/* Inherit global palette unless a section-specific color is entered in CMS. */
+.pillar-grid{grid-template-columns:repeat(var(--cms-pillars-columns,3),minmax(0,1fr))}
+.visit-grid{grid-template-columns:repeat(var(--cms-mission-columns,3),minmax(0,1fr))}
+.cms-hero-cover .hero-banner-image{height:clamp(260px,42vw,620px);object-fit:cover}
+[data-cms-section][data-has-background-image="true"]:before{z-index:0}
+@media(max-width:650px){.pillar-grid,.visit-grid{display:block}}
+
+/* Global style controls apply consistently across interior and outline headings. */
+.bel-hero-title span{-webkit-text-stroke-color:var(--cms-outline)}
+.connect-grid h2 span,.foundation h2 span{-webkit-text-stroke-color:var(--cms-dark-ink)}
+.story[data-image-side="right"] .story-grid > *{flex:1 1 0;min-width:0}
+.pillar p,.visit-card p,.calling-copy p,.story-copy>p{line-height:var(--cms-line-height)}
