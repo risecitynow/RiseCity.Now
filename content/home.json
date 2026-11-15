@@ -1,0 +1,80 @@
+{
+  "hero": {
+    "title_first": "RISE UP.",
+    "title_second": "AND WALK.",
+    "verse": "“In the name of Jesus Christ of Nazareth rise up and walk.”",
+    "invitation": "A call to rise in faith, walk with Jesus Christ, and carry His gospel all over the city."
+  },
+  "message": {
+    "lead": "Rise Up and Walk is more than a phrase. It is our invitation to a life transformed by Jesus Christ.",
+    "paragraph_one": "In Acts 3, Peter spoke these words to a man who could not walk, and by the power of Jesus Christ, the man rose to his feet. His healing revealed the power of the name of Jesus.",
+    "paragraph_two": "Inspired by this moment, Rise City calls people to respond to Jesus: to rise out of what has held them back, walk with Him in faith and obedience, and grow into the purpose He has for their lives.",
+    "paragraph_three": "As we walk with Christ, we share His gospel all over the city—bringing hope, prayer, truth, and the love of Jesus to others.",
+    "steps": [
+      {
+        "title": "Rise in faith.",
+        "description": "Respond to the call of Jesus and trust Him for a transformed life."
+      },
+      {
+        "title": "Walk with Christ.",
+        "description": "Follow Jesus daily through His Word, prayer, and the power of the Holy Ghost."
+      },
+      {
+        "title": "Carry the gospel.",
+        "description": "Share the hope of Jesus and serve others all over the city."
+      }
+    ]
+  },
+  "story": {
+    "lead": "We believe that in Jesus Christ, people can rise up and walk in newness of life.",
+    "paragraph_one": "Our name is inspired by Acts 3:6. We are a Jesus-centered Apostolic church calling people to rise in faith, walk with Christ, and discover the transforming power of His Word and Spirit.",
+    "paragraph_two": "As we follow Jesus together, we want to see lives restored, families strengthened, and disciples equipped to share the gospel all over the city."
+  },
+  "heart": {
+    "introduction": "We are committed to the same truth, power, and transforming experience found in the New Testament church.",
+    "pillars": [
+      {
+        "title": "Rise in faith.",
+        "description": "Respond to the gospel and encounter the life-changing power of Jesus Christ."
+      },
+      {
+        "title": "Walk with Christ.",
+        "description": "Grow through Scripture, prayer, the Holy Ghost, and daily obedience to Jesus."
+      },
+      {
+        "title": "Share His gospel.",
+        "description": "Carry the good news and love of Jesus Christ all over the city."
+      }
+    ]
+  },
+  "belief_preview": {
+    "lead": "Rooted in Scripture. Centered on Jesus. Empowered by the Spirit.",
+    "introduction": "Our faith is built upon the unchanging Word of God and the teachings of Jesus Christ and His apostles. We believe the same truth, power, and transforming experience found in the New Testament church are available to every generation."
+  },
+  "foundation": {
+    "introduction": "We are committed to preserving the Apostolic message, living a Spirit-filled life, and continuing the mission of the New Testament church."
+  },
+  "mission": {
+    "introduction": "We rise in faith and walk with Christ so that others can encounter Him too. Our mission is to share the good news of Jesus all over the city and make disciples who follow Him every day.",
+    "cards": [
+      {
+        "title": "Share the gospel.",
+        "description": "We want every person to hear the life-changing message of Jesus Christ.",
+        "tagline": "GOOD NEWS FOR EVERYONE."
+      },
+      {
+        "title": "Make disciples.",
+        "description": "Helping people know Jesus, grow in the Word, and follow Him with purpose.",
+        "tagline": "FAITH THAT GROWS."
+      },
+      {
+        "title": "Love and serve.",
+        "description": "Demonstrating the love of Christ through prayer, compassion, and meaningful connections.",
+        "tagline": "LOVE IN ACTION."
+      }
+    ]
+  },
+  "connect": {
+    "invitation": "Ready to take a step of faith? Want to know more about following Jesus, share a prayer request, or help bring the gospel all over the city? We would love to connect with you."
+  }
+}

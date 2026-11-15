@@ -1,0 +1,18 @@
+{
+  "images": {
+    "hero_banner": "assets/rise-city-hero.webp",
+    "mobile_wordmark": "assets/rise-city-wordmark.png",
+    "people_photo": "assets/rise-city-people.webp",
+    "monogram": "assets/rc-monogram.png",
+    "social_preview": "assets/rise-city-social.jpg",
+    "favicon": "assets/favicon.png"
+  },
+  "contact": {
+    "email": "",
+    "phone": "",
+    "instagram": "",
+    "facebook": "",
+    "youtube": "",
+    "giving_url": ""
+  }
+}

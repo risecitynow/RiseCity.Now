@@ -1,87 +1,38 @@
-# RISE CITY — GitHub Pages Website
+# Rise City — editable website, GitHub Pages + Pages CMS
 
-A responsive, static, two-page church website built around the Acts 3:6 theme **“Rise Up and Walk”** and the newer black-and-white Rise City branding.
+**This package preserves the Rise City Acts 3:6 website design.** Its black-and-white visual system uses the supplied RC logo, Rise City banner and portrait artwork. The updated cool-gray background is matched to the banner, with feathered edges on desktop and mobile to avoid obvious image rectangles.
 
-## Included
+**Central theme:** “Rise up and walk” (Acts 3:6). The mission is to share the gospel all over the city. No particular neighborhood, address, or city is named.
 
-- `index.html` — Acts 3:6 homepage, Rise Up and Walk invitation, about, heart, 11-belief navigation, citywide gospel mission, connect
-- `beliefs.html` — full *What We Believe* statement: all 11 principles and Scripture references, with Acts 3:6 thematic connection
-- `styles.css` — responsive layout and black-and-white visual identity
-- `script.js` — mobile navigation, current year, church contact/social link rendering
-- `site.config.js` — **edit this file first** to add contact details and social media links
-- `404.html` — friendly missing-page screen
-- `.nojekyll` — helps GitHub Pages publish files directly
-- `assets/` — optimized files generated from your four uploaded images: RC monogram, Rise City wordmark, Rise City NOW banner, and portrait photo
+## How to publish
 
-## Upload to GitHub (no developer tools required)
+1. Extract this ZIP onto your computer. Open the extracted folder.
+2. In your existing GitHub Pages repository, upload the **contents** of this folder, not the folder or ZIP. Replace previous files. Keep the existing `CNAME` file if a custom domain is already connected.
+3. Upload the `content` and `assets` directories, and the `index.html`, `beliefs.html`, `styles.css`, `script.js`, `cms-content.js`, `404.html`, and `.pages.yml` files. **`.pages.yml` begins with a dot and may be hidden in Finder.** On Mac, press `Command + Shift + .` to reveal hidden files.
+4. Commit the changes. Make sure GitHub Pages still deploys from `main` and `/(root)`.
+5. Go to https://app.pagescms.org, sign in with GitHub, connect the Rise City repository, and edit the website via the three content editors.
 
-1. Download and **unzip** `Rise-City-Rise-Up-and-Walk-Website.zip` on your computer.
-2. Visit https://github.com/new and create a **Public** repository, such as `rise-city`.
-3. In your new repository, click **Add file → Upload files** (or the "uploading an existing file" link).
-4. Open the extracted folder. Select **everything inside** it — the `index.html` and `beliefs.html` files, `assets` folder, and other site files. Drag them onto GitHub. Do **not** upload only the outer folder or the ZIP.
-5. Click **Commit changes**.
-6. Go to **Settings → Pages**. Under *Build and deployment*, set **Source = Deploy from a branch**, **Branch = main**, **Folder = /(root)**, then Save.
-7. GitHub will provide a URL like `https://YOUR-USERNAME.github.io/rise-city/`.
+**Full editing walkthrough:** `README-EDITING.md`.
 
-The site uses relative links (`beliefs.html`, `assets/...`), so it works both at a GitHub project URL and with a connected domain.
+## Editors included
 
-## Add church information
+- **Home page**: headline, Acts 3:6 introduction, Our Story, Our Heart, mission, and connection text.
+- **What We Believe**: all 11 principles with rich-text body fields and Scripture references.
+- **Photos, logos and contact links**: image pickers, email, phone, social media, giving URL.
 
-Open `site.config.js` in the repository, click the pencil icon, and edit the quoted strings. For example:
+Changes made in Pages CMS are committed to GitHub and are displayed by the site via `cms-content.js`. No WordPress installation, database, build or paid hosting is required for this method. This is a **field-based editor**, not a freeform drag-and-drop page designer. Layout changes still require editing the HTML/CSS.
 
-```js
-window.RISE_CITY_CONFIG = {
-  email: "hello@example.org",
-  phone: "",
-  instagram: "https://www.instagram.com/YOURHANDLE/",
-  facebook: "",
-  youtube: "",
-  givingUrl: ""
-};
-```
+## Important files
 
-The example above is illustrative; the downloaded file has unknown details **blank**. Unconfigured contact details remain hidden or display a neutral coming-soon message. For social links and online giving, use full URLs beginning with `https://`.
+- `.pages.yml` — which visual fields appear in Pages CMS
+- `content/home.json` — homepage text
+- `content/beliefs.json` — complete statement of faith
+- `content/settings.json` — logos, photographs and links
+- `cms-content.js` — loads the editable files into the preserved design
+- `styles.css` — responsive design + seamlessly blended grayscale
 
-Changes to `site.config.js` take effect when GitHub Pages republishes your commit. This version intentionally avoids listing a physical meeting site, neighborhood, or specific city name: its outreach message is **sharing the gospel all over the city**.
+### Preview locally
 
-## Custom domain (optional)
+The file:// preview uses static fallback text, because browsers normally block `fetch` for local JSON. To preview all CMS edits locally, run `python3 -m http.server 8000` inside the extracted directory and visit http://localhost:8000/. For hosting, just upload the files to GitHub Pages.
 
-1. In your repository, go to **Settings → Pages → Custom domain** and enter the domain you own, e.g. `risecitynow.com`. Save.
-2. At the domain DNS provider (GoDaddy, Squarespace Domains, Cloudflare, etc.), create these GitHub Pages **A** records for the root (`@`):
-
-   | Type | Host | Value |
-   |------|------|-------|
-   | A | @ | `185.199.108.153` |
-   | A | @ | `185.199.109.153` |
-   | A | @ | `185.199.110.153` |
-   | A | @ | `185.199.111.153` |
-
-3. Add a `www` **CNAME** pointing to `YOUR-USERNAME.github.io` (without `https://` and without the repository name).
-4. Remove any **conflicting** existing parking/website DNS records, but preserve mail service records (MX, SPF/DKIM, etc.).
-5. After DNS and certificate provisioning complete, enable **Enforce HTTPS** in GitHub Pages.
-
-Authoritative guide: https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site
-
-## How to edit the What We Believe page
-
-- All eleven beliefs are visible in **`beliefs.html`**, and the homepage links directly to each section.
-- Open `beliefs.html` in GitHub, click Edit, change only the text you need, and commit.
-- To edit the short homepage beliefs list, open `index.html` and find `belief-link-grid`.
-- This is a static website: it needs no database, build, paid hosting, or server-side code.
-
-## Technical notes
-
-- The header's social and contact data are set in `site.config.js`; no data is sent to an external service.
-- The site intentionally does not include a fake working contact form. GitHub Pages is static hosting and cannot receive form submissions by itself; a third-party form service can be connected later.
-- Uses web fonts when online and system sans-serif fallbacks otherwise.
-- The graphic assets have been optimized for fast page loading. All branded photographs/logos are from the four supplied images.
-
-## Central theme — Acts 3:6
-
-**Rise Up and Walk** is the central theme across the homepage, the statement-of-faith introduction, navigation metadata, and footers.
-
-> “In the name of Jesus Christ of Nazareth rise up and walk.” — Acts 3:6 (KJV)
-
-This quotation comes from the account of Peter speaking to a man unable to walk. The site describes the healing faithfully and then clearly distinguishes Rise City's *application* of the text: rise in faith, walk with Christ, and carry the gospel all over the city. The previous citywide statement is retained as **mission**, rather than the primary identity.
-
-No street address, neighborhood, or specific city name is shown.
+The existing custom domain DNS records can remain unchanged. If your previous GitHub site contains a `CNAME` file, do not delete it.

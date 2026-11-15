@@ -1,0 +1,100 @@
+{
+  "intro": {
+    "subtitle": "Rooted in Scripture. Centered on Jesus. Empowered by the Spirit.",
+    "description": "Our faith is built upon the unchanging Word of God and the teachings of Jesus Christ and His apostles. We believe the same truth, power, and transforming experience found in the New Testament church are available to every generation."
+  },
+  "beliefs": [
+    {
+      "id": "scripture",
+      "title": "The Authority of Scripture",
+      "home_label": "The Authority of Scripture",
+      "menu_label": "Authority of Scripture",
+      "body": "<p>We believe the Bible is the inspired, infallible, and authoritative Word of God. Scripture is the foundation of our faith, the guide for our daily lives, and the final authority in matters of doctrine, morality, and spiritual truth. God's Word is timeless, trustworthy, and sufficient to equip believers for a life of faith and godliness.</p>",
+      "scriptures": "2 Timothy 3:16–17; 2 Peter 1:20–21; Psalm 119:105; Hebrews 4:12"
+    },
+    {
+      "id": "oneness",
+      "title": "The Oneness of God",
+      "home_label": "The Oneness of God",
+      "menu_label": "Oneness of God",
+      "body": "<p>We believe there is only one true and living God, who has revealed Himself as Father, through His Son Jesus Christ, and as the Holy Spirit. Jesus Christ is God manifested in the flesh, the fullness of the Godhead bodily, and the only name given under heaven whereby we must be saved.</p>\n<p>We affirm that Jesus Christ is both fully God and fully man, our Savior, Redeemer, and Lord.</p>",
+      "scriptures": "Deuteronomy 6:4; Isaiah 9:6; John 1:1–14; Colossians 2:9; 1 Timothy 3:16"
+    },
+    {
+      "id": "salvation",
+      "title": "The Plan of Salvation",
+      "home_label": "The Plan of Salvation",
+      "menu_label": "Plan of Salvation",
+      "body": "<p>We believe salvation is made possible through the death, burial, and resurrection of Jesus Christ. It is received by grace through faith and experienced through obedience to the gospel, as proclaimed by the apostles.</p>\n<p><strong>Repentance:</strong> We believe every person is called to turn away from sin and turn toward God with a sincere heart, seeking His forgiveness and transformation.</p>\n<p><strong>Water Baptism:</strong> We believe in baptism by complete immersion in water in the name of Jesus Christ for the remission of sins. Baptism identifies the believer with the death, burial, and resurrection of Jesus Christ.</p>\n<p><strong>The Infilling of the Holy Ghost:</strong> We believe in receiving the gift of the Holy Ghost, with the initial evidence of speaking in other tongues as the Spirit gives utterance. The Holy Ghost empowers believers to live victoriously, grow spiritually, and fulfill God's purpose.</p>\n<p>This is the New Testament message proclaimed on the Day of Pentecost and throughout the book of Acts.</p>",
+      "scriptures": "Acts 2:38–39; Acts 2:4; Acts 8:12–17; Acts 10:44–48; Acts 19:1–6; Romans 6:3–4; John 3:5"
+    },
+    {
+      "id": "prayer",
+      "title": "The Power of Prayer and Laying on of Hands",
+      "home_label": "Prayer & Laying on of Hands",
+      "menu_label": "Prayer & Laying on of Hands",
+      "body": "<p>We believe prayer is essential to a living relationship with God. Through prayer, we experience His presence, seek His direction, intercede for others, and witness His power at work.</p>\n<p>We also believe in the biblical practice of laying on of hands as an expression of faith, through which believers pray for healing, blessing, spiritual impartation, and commissioning for ministry. Our confidence rests not in the act itself, but in the power and authority of Jesus Christ.</p>",
+      "scriptures": "James 5:14–16; Mark 16:17–18; Acts 8:17; 1 Timothy 4:14; Philippians 4:6–7"
+    },
+    {
+      "id": "miracles",
+      "title": "The Working of Miracles",
+      "home_label": "The Working of Miracles",
+      "menu_label": "Working of Miracles",
+      "body": "<p>We believe Jesus Christ is the same yesterday, today, and forever. The supernatural power of God did not cease with the early church.</p>\n<p>We believe God still heals the sick, delivers the oppressed, restores broken lives, and performs miracles according to His divine will. We approach God with bold faith, trusting in His power, wisdom, and sovereignty.</p>",
+      "scriptures": "Hebrews 13:8; Mark 16:17–18; Acts 3:1–8; James 5:14–15; 1 Corinthians 12:10"
+    },
+    {
+      "id": "gifts",
+      "title": "The Gifts of the Spirit",
+      "home_label": "The Gifts of the Spirit",
+      "menu_label": "Gifts of the Spirit",
+      "body": "<p>We believe the gifts of the Holy Spirit remain active and relevant in the church today. These spiritual gifts are distributed by the Spirit for the strengthening, encouragement, and edification of the body of Christ.</p>\n<p>We embrace the biblical gifts of wisdom, knowledge, faith, healing, miracles, prophecy, discerning of spirits, diverse kinds of tongues, and interpretation of tongues.</p>\n<p>We believe these gifts should operate in love, humility, biblical order, and submission to the Word of God, always bringing glory to Jesus Christ.</p>",
+      "scriptures": "1 Corinthians 12:4–11; 1 Corinthians 13:1–13; 1 Corinthians 14:26–40; Romans 12:6–8"
+    },
+    {
+      "id": "church",
+      "title": "The Church, Evangelism, and Discipleship",
+      "home_label": "Church, Evangelism & Discipleship",
+      "menu_label": "Church & Discipleship",
+      "body": "<p>We believe Jesus Christ is the head of the church, and every believer is called to be an active part of His body.</p>\n<p>The church exists to glorify God, proclaim the gospel, make disciples, and serve our communities with the love of Christ.</p>\n<p>We embrace the biblical pattern of spiritual leadership, fellowship, teaching, worship, and accountability. We believe ministry is not limited to the pulpit; every believer has a calling to serve, share their faith, and participate in the Great Commission.</p>\n<p>Our mission is not simply to gather people, but to develop devoted followers of Jesus Christ who will impact their families, communities, and the world.</p>",
+      "scriptures": "Matthew 28:19–20; Acts 1:8; Acts 2:42–47; Ephesians 4:11–16; Colossians 1:18"
+    },
+    {
+      "id": "holiness",
+      "title": "Holiness in Lifestyle and Inward Worship",
+      "home_label": "Holiness & Inward Worship",
+      "menu_label": "Holiness & Inward Worship",
+      "body": "<p>We believe holiness is God's call for His people to be set apart for Him. Holiness begins in the heart and is reflected in our thoughts, attitudes, relationships, speech, conduct, and outward lifestyle.</p>\n<p>We believe a transformed life is the fruit of a genuine relationship with Jesus Christ. Through the power of the Holy Ghost, believers are called to pursue righteousness, modesty, purity, humility, and obedience to God's Word.</p>\n<p>True worship begins inwardly, with a surrendered heart and a life that honors God beyond the walls of the church.</p>",
+      "scriptures": "1 Peter 1:15–16; Hebrews 12:14; Romans 12:1–2; 2 Corinthians 7:1; John 4:23–24"
+    },
+    {
+      "id": "praise",
+      "title": "The Expression of Praise and Outward Worship",
+      "home_label": "Outward Praise & Worship",
+      "menu_label": "Expression of Praise",
+      "body": "<p>We believe God is worthy of passionate, sincere, and expressive worship.</p>\n<p>Throughout Scripture, God's people are encouraged to praise Him through singing, clapping, lifting their hands, dancing, musical instruments, and joyful celebration.</p>\n<p>We believe outward expressions of praise flow from inward gratitude, reverence, and devotion. Our worship is not merely a tradition or performance; it is a heartfelt response to the greatness, goodness, and presence of God.</p>\n<p>We embrace both reverence and rejoicing as biblical expressions of worship.</p>",
+      "scriptures": "Psalm 150:1–6; Psalm 47:1; Psalm 134:2; 2 Samuel 6:14; John 4:23–24"
+    },
+    {
+      "id": "return",
+      "title": "The Return of Jesus Christ and the Rapture",
+      "home_label": "The Return of Jesus Christ",
+      "menu_label": "Return of Jesus Christ",
+      "body": "<p>We believe in the literal, personal, and glorious return of Jesus Christ.</p>\n<p>We believe Jesus will return for His church, and those who are in Christ will be caught up to meet Him in the air, an event commonly referred to as the Rapture.</p>\n<p>This blessed hope inspires us to live faithfully, remain spiritually prepared, and proclaim the gospel with urgency until He comes.</p>",
+      "scriptures": "1 Thessalonians 4:16–17; 1 Corinthians 15:51–52; John 14:1–3; Titus 2:13; Matthew 24:42–44"
+    },
+    {
+      "id": "eternity",
+      "title": "Judgment and Eternity",
+      "home_label": "Judgment & Eternity",
+      "menu_label": "Judgment & Eternity",
+      "body": "<p>We believe every person will stand before God and give an account of their life. Scripture teaches that there will be a resurrection of the dead, a final judgment, and an eternal destiny.</p>\n<p>We believe in the reality of heaven and hell, eternal life for those who belong to Christ, and eternal separation from God for those who reject His salvation.</p>\n<p>Because eternity matters, we are committed to sharing the hope of the gospel, extending God's love, and helping people develop a saving relationship with Jesus Christ.</p>",
+      "scriptures": "Hebrews 9:27; Revelation 20:11–15; Revelation 21:1–4; Matthew 25:46; John 3:16–17"
+    }
+  ],
+  "foundation": {
+    "paragraph_one": "We are committed to preserving the Apostolic message, living a Spirit-filled life, and continuing the mission of the New Testament church.",
+    "paragraph_two": "We believe the gospel still changes lives, the Holy Ghost still fills believers, miracles still happen, and Jesus Christ is still building His church."
+  }
+}
