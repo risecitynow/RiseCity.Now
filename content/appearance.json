@@ -20,6 +20,11 @@
     "dark_text": "#ffffff",
     "footer_background": "#f5f5f5"
   },
+  "footer_style": {
+    "show_motto": false,
+    "show_footer_links": false,
+    "show_copyright": false
+  },
   "typography": {
     "headings_font": "Manrope",
     "body_font": "DM Sans",
@@ -43,74 +48,94 @@
     "story_photo_position": "left",
     "pillars_columns_desktop": 3,
     "mission_columns_desktop": 3,
-    "show_announcement_bar": true
+    "show_announcement_bar": true,
+    "show_story_image_caption": false,
+    "show_header_cta": false,
+    "show_hero_secondary_button": false,
+    "use_full_bleed_hero_mobile": false
+  },
+  "effects": {
+    "enable_animations": false,
+    "show_back_to_top": false,
+    "show_navigation_active_line": false
   },
   "sections": {
     "hero": {
       "visible": true,
       "image_opacity": 0,
       "image_position": "center",
-      "order": 1
+      "order": 1,
+      "show_divider_after": false
     },
     "ticker": {
       "visible": true,
       "image_opacity": 0,
       "image_position": "center",
-      "order": 2
+      "order": 2,
+      "show_divider_after": false
     },
     "message": {
       "visible": true,
       "image_opacity": 0,
       "image_position": "center",
-      "order": 3
+      "order": 3,
+      "show_divider_after": false
     },
     "story": {
       "visible": true,
       "image_opacity": 0,
       "image_position": "center",
-      "order": 4
+      "order": 4,
+      "show_divider_after": false
     },
     "heart": {
       "visible": true,
       "image_opacity": 0,
       "image_position": "center",
-      "order": 5
+      "order": 5,
+      "show_divider_after": false
     },
     "belief_preview": {
       "visible": true,
       "image_opacity": 0,
       "image_position": "center",
-      "order": 6
+      "order": 6,
+      "show_divider_after": false
     },
     "foundation": {
       "visible": true,
       "image_opacity": 0,
       "image_position": "center",
-      "order": 7
+      "order": 7,
+      "show_divider_after": false
     },
     "mission": {
       "visible": true,
       "image_opacity": 0,
       "image_position": "center",
-      "order": 8
+      "order": 8,
+      "show_divider_after": false
     },
     "connect": {
       "visible": true,
       "image_opacity": 0,
       "image_position": "center",
-      "order": 9
+      "order": 9,
+      "show_divider_after": false
     },
     "beliefs_hero": {
       "visible": true,
       "image_opacity": 0,
       "image_position": "center",
-      "order": 1
+      "order": 1,
+      "show_divider_after": false
     },
     "beliefs_body": {
       "visible": true,
       "image_opacity": 0,
       "image_position": "center",
-      "order": 2
+      "order": 2,
+      "show_divider_after": false
     }
   }
 }
