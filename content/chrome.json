@@ -2,9 +2,9 @@
   "site": {
     "name": "Rise City",
     "home_title": "Rise City | Rise Up and Walk",
-    "home_description": "Rise City is an Apostolic church built around the call of Acts 3:6: Rise up and walk with Christ. Sharing the gospel all over the city.",
+    "home_description": "Rise City is an Christian community built around the call of Acts 3:6: Rise up and walk with Christ. Sharing the gospel all over the city.",
     "beliefs_title": "What We Believe | Rise City",
-    "beliefs_description": "What We Believe at Rise City: our 11 foundational Apostolic beliefs, from Scripture and the Oneness of God to salvation, worship, miracles, the return of Christ and eternity.",
+    "beliefs_description": "What We Believe at Rise City: our 11 foundational Biblical beliefs, from Scripture and the Oneness of God to salvation, worship, miracles, the return of Christ and eternity.",
     "social_title": "Rise City | Rise Up and Walk",
     "social_description": "Rise Up and Walk. Acts 3:6. Rise in faith, walk with Christ, and share His gospel all over the city."
   },
@@ -47,7 +47,7 @@
       "url": "beliefs.html"
     },
     "message_link": {
-      "label": "Explore Our Apostolic Faith",
+      "label": "Explore Our Biblical Faith",
       "url": "beliefs.html"
     },
     "beliefs_preview": {
