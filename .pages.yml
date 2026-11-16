@@ -3222,3 +3222,254 @@ content:
     - {name: form_max_width, label: Form width px on tablet, type: number}
     - {name: show_callout, label: Show personal invitation callout, type: boolean}
     - {name: show_closing, label: Show closing section, type: boolean}
+# APPEND THIS SECTION to the END of your existing .pages.yml. Do not replace your current configuration.
+- name: meet_rich_kim
+  label: 09 • MEET RICH & KIM — Biography, Photo & Coffee
+  type: file
+  path: content/meet-rich-and-kim.json
+  format: json
+  fields:
+  - name: page
+    label: Meet page, photo & homepage button
+    type: object
+    fields:
+    - name: title
+      label: Browser tab title
+      type: string
+    - name: description
+      label: Search description
+      type: text
+    - name: eyebrow
+      label: Hero small label
+      type: string
+    - name: heading_first
+      label: Hero first headline
+      type: string
+    - name: heading_second
+      label: Hero outlined headline
+      type: string
+    - name: intro
+      label: Welcome paragraph
+      type: text
+    - name: hero_caption
+      label: Photo caption
+      type: string
+    - name: photo_path
+      label: Photo path
+      type: string
+    - name: photo_alt
+      label: Photo description
+      type: string
+    - name: home_button_label
+      label: Our Story button label
+      type: string
+    - name: home_button_url
+      label: Our Story button URL
+      type: string
+  - name: story
+    label: Our ministry journey
+    type: object
+    fields:
+    - name: eyebrow
+      label: Small label
+      type: string
+    - name: heading_first
+      label: Headline first line
+      type: string
+    - name: heading_outline
+      label: Outlined headline
+      type: string
+    - name: lead
+      label: Main introductory statement
+      type: text
+    - name: paragraph_one
+      label: 10+ years of youth ministry and church launches
+      type: text
+    - name: paragraph_two
+      label: Rich and Kim’s ministry journeys
+      type: text
+    - name: paragraph_three
+      label: Closing paragraph
+      type: text
+  - name: roots
+    label: Cultural heritage & hospitality
+    type: object
+    fields:
+    - name: eyebrow
+      label: Small label
+      type: string
+    - name: heading_first
+      label: Headline first line
+      type: string
+    - name: heading_outline
+      label: Outlined headline
+      type: string
+    - name: lead
+      label: Introductory statement
+      type: text
+    - name: paragraph_one
+      label: Heritage paragraph
+      type: text
+    - name: paragraph_two
+      label: Hospitality paragraph
+      type: text
+    - name: footnote
+      label: Closing line
+      type: string
+  - name: professional
+    label: Service backgrounds & people-first purpose
+    type: object
+    fields:
+    - name: eyebrow
+      label: Small label
+      type: string
+    - name: heading_first
+      label: Headline first line
+      type: string
+    - name: heading_outline
+      label: Outlined headline
+      type: string
+    - name: lead
+      label: Introduction
+      type: text
+    - name: rich_title
+      label: Listening card label
+      type: string
+    - name: rich_heading
+      label: Listening card heading
+      type: string
+    - name: rich_description
+      label: Listening card description
+      type: text
+    - name: kim_title
+      label: Service card label
+      type: string
+    - name: kim_heading
+      label: Service card heading
+      type: string
+    - name: kim_description
+      label: Service card description
+      type: text
+    - name: together_title
+      label: Connection card label
+      type: string
+    - name: together_heading
+      label: Connection card heading
+      type: string
+    - name: together_description
+      label: Connection card description
+      type: text
+  - name: faith
+    label: Worship, parenthood & discipleship
+    type: object
+    fields:
+    - name: eyebrow
+      label: Small label
+      type: string
+    - name: heading_first
+      label: Headline first line
+      type: string
+    - name: heading_second
+      label: Headline second line
+      type: string
+    - name: heading_outline
+      label: Outlined headline
+      type: string
+    - name: paragraph_one
+      label: Worship paragraph
+      type: text
+    - name: paragraph_two
+      label: Parenthood and discipleship
+      type: text
+    - name: paragraph_three
+      label: Religion as usual statement
+      type: text
+  - name: friendship
+    label: Friendship & coffee invitation
+    type: object
+    fields:
+    - name: eyebrow
+      label: Small label
+      type: string
+    - name: heading_first
+      label: Headline line 1
+      type: string
+    - name: heading_outline
+      label: Outlined headline
+      type: string
+    - name: heading_second
+      label: Headline line 3
+      type: string
+    - name: heading_last
+      label: Headline line 4
+      type: string
+    - name: reference
+      label: Bible reference
+      type: string
+    - name: lead
+      label: Invitation introduction
+      type: text
+    - name: paragraph
+      label: Invitation paragraph
+      type: text
+    - name: coffee_title
+      label: Coffee call-to-action headline
+      type: string
+    - name: coffee_description
+      label: Coffee invitation copy
+      type: text
+    - name: button_label
+      label: Coffee button label
+      type: string
+    - name: button_url
+      label: Coffee button URL
+      type: string
+    - name: secondary_label
+      label: Secondary link text
+      type: string
+    - name: secondary_url
+      label: Secondary link URL
+      type: string
+  - name: design
+    label: Meet page colors, spacing & visibility
+    type: object
+    fields:
+    - name: hero_background
+      label: Hero background
+      type: string
+    - name: content_background
+      label: White content sections
+      type: string
+    - name: soft_background
+      label: Heritage section background
+      type: string
+    - name: dark_background
+      label: Worship section background
+      type: string
+    - name: dark_text
+      label: Worship section text
+      type: string
+    - name: photo_background
+      label: Photo background
+      type: string
+    - name: hero_width
+      label: Hero max width (pixels)
+      type: number
+    - name: hero_top_space
+      label: Hero top spacing (pixels)
+      type: number
+    - name: hero_bottom_space
+      label: Hero bottom spacing (pixels)
+      type: number
+    - name: show_roots
+      label: Show heritage section
+      type: boolean
+    - name: show_professional
+      label: Show healthcare section
+      type: boolean
+    - name: show_faith
+      label: Show family and worship section
+      type: boolean
+    - name: show_friendship
+      label: Show friendship and coffee section
+      type: boolean
