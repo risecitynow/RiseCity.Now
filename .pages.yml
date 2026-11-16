@@ -1,3 +1,6 @@
+# Rise City merged CMS — original 491 field definitions retained unchanged.
+# 78 Give-page field definitions appended. Six editors total.
+# Upload to repository root as .pages.yml.
 # Rise City — EXPANDED Pages CMS config
 # Place at repository root as .pages.yml (leading dot required).
 # Each field below saves to a real content/*.json property.
@@ -2579,3 +2582,281 @@ content:
       label: Giving URL
       type: string
     description: Blank fields do not display publicly. Add only working email, social, and giving links.
+- name: give
+  label: 06 • GIVE — Zelle, Generosity, Layout & FAQs
+  type: file
+  path: content/give.json
+  format: json
+  fields:
+  - name: page
+    label: Giving page — headline & navigation
+    type: object
+    fields:
+    - name: browser_title
+      label: Browser tab title
+      type: string
+    - name: meta_description
+      label: Search description
+      type: text
+    - name: nav_label
+      label: Give link label
+      type: string
+    - name: show_in_navigation
+      label: Show Give in the navigation
+      type: boolean
+    - name: show_in_footer
+      label: Show Give in the footer
+      type: boolean
+    - name: eyebrow
+      label: Small eyebrow above hero
+      type: string
+    - name: headline
+      label: Main hero word
+      type: string
+    - name: outline_word
+      label: Outlined hero phrase
+      type: string
+    - name: intro
+      label: Hero introduction
+      type: text
+    - name: scroll_label
+      label: Hero scroll link label
+      type: string
+  - name: zelle
+    label: Zelle details — recipient email & actions
+    type: object
+    fields:
+    - name: eyebrow
+      label: Section small label
+      type: string
+    - name: title
+      label: Section heading
+      type: string
+    - name: description
+      label: Giving instructions introduction
+      type: text
+    - name: method_label
+      label: Method label
+      type: string
+    - name: method_name
+      label: Payment method title
+      type: string
+    - name: recipient_label
+      label: Recipient caption
+      type: string
+    - name: email
+      label: Zelle receiving email — verify before publishing
+      type: string
+      required: true
+      description: Use your verified Rise City Zelle email. Changes affect the public giving instructions and copy button.
+    - name: copy_label
+      label: Copy button label
+      type: string
+    - name: copied_label
+      label: Successful copy button label
+      type: string
+    - name: copy_error_label
+      label: Copy failure notice
+      type: string
+    - name: steps_link_label
+      label: How to give link label
+      type: string
+    - name: caution
+      label: Important payment verification note
+      type: text
+    - name: disclaimer
+      label: Payment privacy notice
+      type: text
+  - name: instructions
+    label: How to give — the four steps
+    type: object
+    fields:
+    - name: eyebrow
+      label: Section small label
+      type: string
+    - name: title
+      label: Section heading
+      type: string
+    - name: introduction
+      label: Section intro
+      type: text
+    - name: steps
+      label: The four giving instructions
+      type: object
+      fields:
+      - name: number
+        label: Number
+        type: string
+      - name: title
+        label: Title
+        type: string
+      - name: description
+        label: Description
+        type: text
+      list:
+        min: 4
+        max: 4
+        collapsible:
+          collapsed: true
+          summary: '{index} — {title}'
+    - name: after_note
+      label: Bank availability note
+      type: text
+  - name: impact
+    label: Giving mission & ministry impact
+    type: object
+    fields:
+    - name: eyebrow
+      label: Section small label
+      type: string
+    - name: title_first
+      label: First headline line
+      type: string
+    - name: title_outlined
+      label: Outlined headline line
+      type: string
+    - name: introduction
+      label: Ministry impact intro
+      type: text
+    - name: items
+      label: Three giving mission cards
+      type: object
+      fields:
+      - name: number
+        label: Number
+        type: string
+      - name: title
+        label: Title
+        type: string
+      - name: description
+        label: Description
+        type: text
+      list:
+        min: 3
+        max: 3
+        collapsible:
+          collapsed: true
+          summary: '{index} — {title}'
+  - name: verse
+    label: Bible verse & generosity statement
+    type: object
+    fields:
+    - name: eyebrow
+      label: Verse section small label
+      type: string
+    - name: quote
+      label: Bible verse excerpt
+      type: text
+    - name: reference
+      label: Scripture citation
+      type: string
+    - name: statement
+      label: Message beneath verse
+      type: text
+  - name: faq
+    label: Frequently asked questions
+    type: object
+    fields:
+    - name: eyebrow
+      label: FAQ small label
+      type: string
+    - name: title
+      label: FAQ headline
+      type: string
+    - name: items
+      label: Giving questions and answers
+      type: object
+      fields:
+      - name: question
+        label: Question
+        type: string
+      - name: answer
+        label: Answer
+        type: text
+      list:
+        min: 5
+        max: 5
+        collapsible:
+          collapsed: true
+          summary: '{index} — {question}'
+  - name: bottom
+    label: Closing giving call-to-action
+    type: object
+    fields:
+    - name: eyebrow
+      label: Closing section small label
+      type: string
+    - name: title
+      label: Closing headline
+      type: string
+    - name: description
+      label: Closing paragraph
+      type: text
+    - name: button_text
+      label: Copy email button
+      type: string
+    - name: secondary_text
+      label: Return link text
+      type: string
+    - name: secondary_url
+      label: Return link URL
+      type: string
+  - name: design
+    label: Giving page — Colors, Spacing & Sections
+    type: object
+    fields:
+    - name: page_bg
+      label: Page background
+      type: string
+      description: 'Use a hexadecimal color value, e.g. #FFFFFF.'
+    - name: hero_bg
+      label: Hero background
+      type: string
+      description: 'Use a hexadecimal color value, e.g. #FFFFFF.'
+    - name: text_color
+      label: Text color
+      type: string
+      description: 'Use a hexadecimal color value, e.g. #FFFFFF.'
+    - name: panel_bg
+      label: Zelle panel background
+      type: string
+      description: 'Use a hexadecimal color value, e.g. #FFFFFF.'
+    - name: panel_text
+      label: Zelle panel text
+      type: string
+    - name: card_bg
+      label: Instruction and impact cards
+      type: string
+      description: 'Use a hexadecimal color value, e.g. #FFFFFF.'
+    - name: muted_color
+      label: Secondary text
+      type: string
+      description: 'Use a hexadecimal color value, e.g. #FFFFFF.'
+    - name: line_color
+      label: Divider color
+      type: string
+      description: 'Use a hexadecimal color value, e.g. #FFFFFF.'
+    - name: hero_spacing_desktop
+      label: Hero bottom spacing — desktop px
+      type: number
+    - name: hero_spacing_mobile
+      label: Hero bottom spacing — mobile px
+      type: number
+    - name: content_width
+      label: Max content width in pixels
+      type: number
+    - name: show_impact
+      label: Show the giving impact cards
+      type: boolean
+    - name: show_scripture
+      label: Show the Scripture section
+      type: boolean
+    - name: show_faq
+      label: Show frequently asked questions
+      type: boolean
+    - name: show_safety_note
+      label: Show recipient verification warning
+      type: boolean
+    - name: show_bottom_cta
+      label: Show the closing invitation
+      type: boolean
