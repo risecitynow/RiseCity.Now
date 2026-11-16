@@ -1,0 +1,142 @@
+{
+  "page": {
+    "browser_title": "Events | Rise City",
+    "meta_description": "Explore upcoming Rise City ministry gatherings — online worship, in-person fellowship, and Bible study. Dates will be announced soon.",
+    "nav_label": "Events",
+    "show_in_navigation": true,
+    "show_in_footer": true,
+    "eyebrow": "RISE CITY / EVENTS",
+    "headline": "EVENTS.",
+    "outline_word": "FIND YOUR PLACE.",
+    "intro": "Three ways to gather. One shared invitation to rise in faith, walk with Christ, and grow together.",
+    "scroll_label": "Discover our experiences",
+    "status_kicker": "THE NEXT GATHERING",
+    "status_text": "Dates are being finalized. Explore the experiences below and check back for details on how to join."
+  },
+  "featured": {
+    "eyebrow": "01 / THE EXPERIENCES",
+    "title": "ROOM TO BELONG.",
+    "introduction": "Whether you are joining from your living room, sharing a meal, or opening Scripture, there is a place to grow together.",
+    "items": [
+      {
+        "rise_word": "RISE",
+        "name": "anywhere",
+        "eyebrow": "ONLINE WORSHIP EXPERIENCE",
+        "status": "DATE COMING SOON",
+        "summary": "Worship, biblical teaching, and prayer—right where you are. Your connection to Rise City travels with you.",
+        "highlight": "ONE FAITH. ANYWHERE.",
+        "cta_label": "Get event updates",
+        "cta_url": "#connect-next-step",
+        "image": "assets/rise-anywhere-film.webp",
+        "image_alt": "Multicultural group participating in an online worship experience",
+        "accent": "#617d9b",
+        "accent_soft": "#e9f0f5",
+        "logo_text": "#354d64",
+        "bullets": []
+      },
+      {
+        "rise_word": "RISE",
+        "name": "connect",
+        "eyebrow": "IN-PERSON FELLOWSHIP & BREAKING BREAD",
+        "status": "DATE COMING SOON",
+        "summary": "A seat at the table, meaningful conversation, and genuine Christian community. Come share life together.",
+        "highlight": "FAITH GROWS TOGETHER.",
+        "cta_label": "Get event updates",
+        "cta_url": "#connect-next-step",
+        "image": "assets/rise-connect-film.webp",
+        "image_alt": "Multicultural group enjoying fellowship around a meal",
+        "accent": "#b17f57",
+        "accent_soft": "#f6eee4",
+        "logo_text": "#6d472b",
+        "bullets": []
+      },
+      {
+        "rise_word": "RISE",
+        "name": "up and walk",
+        "eyebrow": "BIBLE STUDY & SPIRITUAL GROWTH",
+        "status": "DATE COMING SOON",
+        "summary": "Explore the Word, ask honest questions, and take your next step in faith. Inspired by Acts 3:6.",
+        "highlight": "OPEN THE WORD. WALK WITH CHRIST.",
+        "cta_label": "Get event updates",
+        "cta_url": "#connect-next-step",
+        "image": "assets/rise-up-and-walk-film.webp",
+        "image_alt": "Multicultural Bible study group gathered together",
+        "accent": "#5b8071",
+        "accent_soft": "#e8efe9",
+        "logo_text": "#38594c",
+        "bullets": []
+      }
+    ]
+  },
+  "experience": {
+    "eyebrow": "02 / THE HEART BEHIND IT",
+    "title_first": "MORE THAN",
+    "title_outlined": "A GATHERING.",
+    "introduction": "Each expression is designed to create space for meaningful connection with Jesus and one another.",
+    "items": [
+      {
+        "number": "01",
+        "title": "Christ-centered atmosphere",
+        "description": "Every gathering points people to Jesus Christ through worship, conversation, prayer, and the Word."
+      },
+      {
+        "number": "02",
+        "title": "A place to belong",
+        "description": "New guests and familiar faces alike are welcomed into a warm, faith-filled environment."
+      },
+      {
+        "number": "03",
+        "title": "Clear next steps",
+        "description": "As dates are announced, each event will include simple details for joining, attending, and staying connected."
+      }
+    ]
+  },
+  "faq": {
+    "eyebrow": "03 / BEFORE YOU JOIN",
+    "title": "GOOD TO KNOW.",
+    "items": [
+      {
+        "question": "When will the dates be announced?",
+        "answer": "Dates are still being finalized. Check back soon for event timing, registration, and additional details."
+      },
+      {
+        "question": "Will registration be required?",
+        "answer": "Some gatherings may use registration so we can prepare well. If needed, a registration link will be shared once the event details are published."
+      },
+      {
+        "question": "Can I come if I am new to Rise City?",
+        "answer": "Absolutely. Each gathering is designed to be welcoming for guests, friends, and anyone interested in learning more about Rise City."
+      },
+      {
+        "question": "Will these events happen regularly?",
+        "answer": "These ministry expressions are part of the ongoing life of Rise City. Frequency and schedule details will be posted as plans are confirmed."
+      }
+    ]
+  },
+  "bottom": {
+    "eyebrow": "RISE UP AND WALK • ACTS 3:6",
+    "title": "YOUR NEXT STEP STARTS HERE.",
+    "description": "We are planning what comes next. Dates and ways to join will be shared as soon as they are confirmed.",
+    "primary_text": "Back to Rise City",
+    "primary_url": "index.html",
+    "secondary_text": "Get connected",
+    "secondary_url": "index.html#connect"
+  },
+  "design": {
+    "page_bg": "#f5f3ef",
+    "hero_bg": "#f5f3ef",
+    "panel_bg": "#ffffff",
+    "card_bg": "#ffffff",
+    "text_color": "#161917",
+    "muted_color": "#6b6a65",
+    "line_color": "#dad8d2",
+    "hero_spacing_desktop": 68,
+    "hero_spacing_mobile": 54,
+    "content_width": 1240,
+    "show_status_panel": true,
+    "show_experience": true,
+    "show_faq": true,
+    "show_bottom_cta": true,
+    "cards_per_row": 3
+  }
+}
