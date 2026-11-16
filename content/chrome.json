@@ -35,7 +35,7 @@
       }
     ],
     "cta_label": "Get Connected",
-    "cta_url": "index.html#connect"
+    "cta_url": "connect.html"
   },
   "buttons": {
     "hero_primary": {
@@ -55,8 +55,8 @@
       "url": "beliefs.html"
     },
     "connect": {
-      "label": "See What We Believe",
-      "url": "beliefs.html"
+      "label": "Get Connected",
+      "url": "connect.html"
     },
     "beliefs_back": {
       "label": "BACK TO RISE CITY HOME",
