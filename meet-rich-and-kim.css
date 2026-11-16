@@ -1,0 +1,72 @@
+/* Meet Rich & Kim — inherits existing Rise City typography, colors, header and footer. */
+:root{--meet-hero-bg:#f5f5f5;--meet-content-bg:#fff;--meet-soft-bg:#f1f1f1;--meet-dark-bg:#090909;--meet-dark-ink:#fff;--meet-photo-bg:#fff;--meet-hero-space-top:88px;--meet-hero-space-bottom:74px;--meet-hero-width:1240px}
+.page-meet-rich-kim .meet-hero{background:var(--meet-hero-bg);padding:var(--meet-hero-space-top) 0 var(--meet-hero-space-bottom)}
+.page-meet-rich-kim .meet-hero>.wrap{max-width:var(--meet-hero-width)}
+.meet-overline,.meet-coffee-top{display:flex;gap:20px;justify-content:space-between;align-items:center;font-size:11px;font-weight:800;letter-spacing:.15em;color:var(--muted);text-transform:uppercase}
+.meet-hero-heading{display:grid;grid-template-columns:minmax(0,1.32fr) minmax(250px,.7fr);align-items:end;gap:clamp(30px,5vw,90px);padding:62px 0 0}
+.meet-hero h1,.meet-display,.meet-faith-headline,.meet-friend-headline{font-family:var(--serif);font-weight:800;letter-spacing:-.07em;text-transform:uppercase}
+.meet-hero h1{font-size:clamp(64px,9.1vw,142px);line-height:.9;margin:0}
+.meet-outline{color:transparent;-webkit-text-stroke:1.7px currentColor;paint-order:stroke fill}
+/* Use explicitly ink-colored stroke so outlined letters remain visible in all browsers. */
+.meet-hero .meet-outline,.meet-display .meet-outline,.meet-friend-headline .meet-outline{-webkit-text-stroke-color:var(--ink)}
+.meet-hero-intro p,.meet-prose p,.meet-section-head>p,.meet-card p,.meet-friend-copy>p{line-height:1.65}
+.meet-hero-intro p{font-size:clamp(16px,1.5vw,21px);font-weight:600;line-height:1.55;margin:0 0 24px;color:#383836}
+.meet-under-link{color:inherit;text-decoration:none;border-bottom:1px solid currentColor;display:inline-flex;align-items:center;justify-content:space-between;gap:30px;font-size:13px;font-weight:800;padding-bottom:8px}
+.meet-under-link:hover{opacity:.62}
+.page-meet-rich-kim .meet-hero-image{
+  position:relative;display:block;overflow:hidden;background:var(--meet-photo-bg);
+  width:100vw;max-width:none;margin:18px 0 0 calc(50% - 50vw);
+  border:0;border-radius:0;
+}
+.page-meet-rich-kim .meet-hero-image img{
+  display:block;width:100%;max-width:none;height:auto;object-fit:contain;object-position:center center;
+  border-radius:0;
+}
+.meet-hero-image>span{position:absolute;left:max(18px,calc((100vw - var(--meet-hero-width)) / 2));bottom:18px;background:rgba(255,255,255,.94);padding:10px 13px;font-size:10px;letter-spacing:.13em;font-weight:800}
+.meet-section{padding:clamp(80px,11vw,152px) 0}
+.meet-story,.meet-professional{background:var(--meet-content-bg)}
+.meet-roots{background:var(--meet-soft-bg);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.meet-split{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(55px,8vw,125px);align-items:start}
+.meet-fixed{position:relative}
+.meet-display{font-size:clamp(44px,5.3vw,80px);line-height:1.06;margin:24px 0 0;overflow-wrap:break-word}
+.meet-prose{max-width:560px}
+.meet-prose p{font-size:16px;color:#545452;margin:0 0 22px}
+.meet-prose p.meet-lead,.meet-lead{font-size:clamp(19px,2.0vw,25px)!important;font-weight:700;color:#171717!important;line-height:1.49!important}
+.meet-roots-mark{font-size:80px;line-height:1;margin-top:44px}
+.meet-footnote{border-top:1px solid var(--rule);padding-top:18px;margin-top:34px;font-size:11px;font-weight:800;letter-spacing:.16em}
+.meet-section-head{display:grid;grid-template-columns:1fr minmax(250px,.6fr);gap:60px;align-items:end;margin-bottom:54px}
+.meet-section-head p{max-width:380px;margin-bottom:0}
+.meet-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.meet-card{border:1px solid var(--rule);background:#fafafa;padding:32px;min-height:360px;display:flex;flex-direction:column}
+.meet-card-label{display:block;font-size:11px;font-weight:800;letter-spacing:.17em;margin-bottom:42px}
+.meet-card h3{font-size:clamp(22px,2.0vw,29px);font-weight:800;line-height:1.12;letter-spacing:-.035em;margin:0 0 18px}
+.meet-card p{font-size:14px;color:#555;line-height:1.64;margin:0 0 30px}
+.meet-card-no{margin-top:auto;border-top:1px solid var(--rule);padding-top:18px;font-size:12px;font-weight:800}
+.meet-faith{padding:clamp(85px,12vw,165px) 0;background:var(--meet-dark-bg);color:var(--meet-dark-ink)}
+.meet-faith-grid{display:grid;grid-template-columns:1.14fr .86fr;gap:clamp(40px,7vw,120px);align-items:center}
+.meet-faith-headline{font-size:clamp(45px,6.5vw,108px);line-height:1.02;margin:29px 0 0}
+.meet-faith-headline .meet-outline{-webkit-text-stroke-color:var(--meet-dark-ink)}
+.meet-faith-prose p{font-size:16px;line-height:1.7;color:rgba(255,255,255,.68);margin:0 0 27px}
+.meet-faith-prose .meet-faith-emphasis{color:#fff;font-size:19px;font-weight:700;border-left:2px solid #fff;padding-left:24px;margin-top:36px}
+.meet-friendship{padding:clamp(88px,12vw,158px) 0;background:var(--meet-content-bg)}
+.meet-friend-grid{display:grid;grid-template-columns:minmax(0,1.07fr) minmax(0,.93fr);gap:clamp(45px,6vw,110px);margin-top:38px}
+.meet-friend-headline{font-size:clamp(42px,5.5vw,87px);line-height:1.02;margin:0 0 32px}
+.meet-scripture{font-size:11px;letter-spacing:.17em;font-weight:800}
+.meet-friend-copy{padding-top:10px}
+.meet-friend-copy>p:not(.meet-lead){color:#555}
+.meet-coffee-box{border:1px solid var(--rule);background:#f4f4f4;margin-top:36px;padding:30px}
+.meet-coffee-top{padding-bottom:30px;border-bottom:1px solid var(--rule);font-size:10px}
+.meet-coffee-box h3{margin:30px 0 13px;font-family:var(--serif);font-size:clamp(30px,3.4vw,49px);letter-spacing:-.055em;line-height:1.08}
+.meet-coffee-box p{margin:0;color:#555;line-height:1.55}
+.meet-coffee-actions{display:flex;gap:23px;align-items:center;flex-wrap:wrap;margin-top:30px}
+.meet-coffee-actions .meet-under-link{margin:0}
+.meet-profile-button{margin:24px 0 3px}
+@media(max-width:1060px){.meet-hero-heading{grid-template-columns:1fr;gap:26px}.meet-hero h1{font-size:clamp(57px,11vw,116px)}.meet-hero-intro{max-width:720px}.meet-cards{grid-template-columns:1fr 1fr}.meet-card:last-child{grid-column:1/-1;min-height:220px}}
+@media(max-width:780px){.meet-hero{padding:54px 0 44px!important}.meet-overline-right{display:none}.meet-hero-heading{padding:30px 0}.meet-hero h1{font-size:clamp(51px,13vw,88px)}.meet-overline{gap:8px}.meet-hero-image>span{position:absolute;left:18px;bottom:10px;font-size:9px}.page-meet-rich-kim .meet-hero-image img{height:clamp(300px,68vw,480px);object-fit:cover;object-position:center center}.meet-split,.meet-section-head,.meet-faith-grid,.meet-friend-grid{grid-template-columns:1fr;gap:30px}.meet-section{padding:77px 0}.meet-display{font-size:clamp(42px,9vw,76px)}.meet-section-head{margin-bottom:27px}.meet-cards{grid-template-columns:1fr}.meet-card,.meet-card:last-child{grid-column:auto;min-height:0}.meet-card-label{margin-bottom:25px}.meet-faith-headline{font-size:clamp(43px,11vw,80px)}.meet-friend-headline{font-size:clamp(43px,10vw,70px)}.meet-coffee-box{padding:24px}.meet-friendship{padding:70px 0}}
+@media(max-width:390px){.meet-hero h1{font-size:51px}.meet-coffee-actions{align-items:stretch;flex-direction:column}.meet-coffee-actions .btn,.meet-coffee-actions .meet-under-link{width:100%;justify-content:space-between}}
+@media(prefers-reduced-motion:reduce){.meet-under-link,.meet-coffee-actions .btn{transition:none}}
+
+/* Meet page banner intentionally follows the homepage full-bleed image pattern. */
+.page-meet-rich-kim .meet-hero-image{margin-inline:calc(50% - 50vw);width:100vw!important;max-width:none!important}
+.page-meet-rich-kim .meet-hero-image img{width:100%!important;max-width:none!important}
+@media(max-width:780px){.page-meet-rich-kim .meet-hero{padding:26px 0 56px!important}.page-meet-rich-kim .meet-hero-heading{padding-top:36px}.page-meet-rich-kim .meet-hero-image{margin-top:16px}}

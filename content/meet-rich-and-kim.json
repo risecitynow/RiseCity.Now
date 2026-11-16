@@ -1,0 +1,88 @@
+{
+  "page": {
+    "title": "Meet Rich & Kim | Rise City",
+    "description": "Meet Rich and Kim James: a shared life of ministry, community, multicultural heritage, friendship and putting people first.",
+    "eyebrow": "THE PEOPLE / BEHIND RISE CITY",
+    "heading_first": "MEET",
+    "heading_second": "RICH & KIM.",
+    "intro": "We are Rich and Kim James. Before titles, schedules, or Sunday gatherings, we are two people who love Jesus and believe every person deserves to be known, heard, and loved.",
+    "hero_caption": "MORE THAN A NAME. A HEART FOR PEOPLE.",
+    "photo_path": "assets/rich-and-kim-monogram.png",
+    "photo_alt": "Rich and Kim James standing together in front of a black RC monogram",
+    "home_button_label": "Meet Rich & Kim",
+    "home_button_url": "meet-rich-and-kim.html"
+  },
+  "story": {
+    "eyebrow": "01 / A LIFE OF SERVICE",
+    "heading_first": "OUR STORY IS",
+    "heading_outline": "STILL BEING WRITTEN.",
+    "lead": "Ministry has never been just something we do. It has shaped how we live, love, lead, and show up for others.",
+    "paragraph_one": "Both of us have served in youth ministry for more than 10 years, walking with young people and families through questions, celebrations, and difficult seasons. We have also helped launch multiple churches, serving wherever needed as communities of faith took root.",
+    "paragraph_two": "Rich’s journey began with music and worship and grew through biblical studies, licensed ministry, evangelism, and youth leadership in South Texas, including district service. Kim has spent those same years investing in youth, families, and relationships across ministry and community life. Our shared calling has always been to help people discover and follow Jesus.",
+    "paragraph_three": "What stays with us is never the title or the size of a gathering. It is the conversations after service, the prayers shared in difficult seasons, and the privilege of helping someone take one more step with Christ."
+  },
+  "roots": {
+    "eyebrow": "02 / OUR ROOTS",
+    "heading_first": "MANY CULTURES.",
+    "heading_outline": "ONE TABLE.",
+    "lead": "Our family story reaches across cultures, languages, and coastlines.",
+    "paragraph_one": "Latin American and Spanish-speaking traditions, Caribbean island heritage, West African roots, and American experiences have all shaped our view of home, hospitality, and community.",
+    "paragraph_two": "They remind us that every person arrives with a story worth hearing. Differences are not walls to get past; they are opportunities to listen, learn, laugh, and make room for one another.",
+    "footnote": "DIFFERENT STORIES. SHARED HUMANITY."
+  },
+  "professional": {
+    "eyebrow": "03 / THE HEART BEHIND OUR WORK",
+    "heading_first": "PEOPLE ARE",
+    "heading_outline": "OUR PURPOSE.",
+    "lead": "Our backgrounds in service-based industries have taught us something simple: the most meaningful work begins with people, not processes. Listening, showing up, and treating others with dignity are more than professional habits—they are part of how we live our faith.",
+    "rich_title": "01 / LISTEN",
+    "rich_heading": "Start with their story.",
+    "rich_description": "Every person comes with experiences, questions, hopes, and hurts. We want to make room for honest conversations and listen without rushing to answers.",
+    "kim_title": "02 / SERVE",
+    "kim_heading": "Care that shows up.",
+    "kim_description": "For us, compassion is practical. It looks like being present, showing kindness, extending a hand, and making sure nobody feels overlooked.",
+    "together_title": "03 / CONNECT",
+    "together_heading": "Relationships over routine.",
+    "together_description": "Whether we meet across a table, in the community, or at church, our desire is the same: know people by name and build relationships rooted in trust."
+  },
+  "faith": {
+    "eyebrow": "04 / FAITH IN EVERYDAY LIFE",
+    "heading_first": "WORSHIP.",
+    "heading_second": "FAMILY.",
+    "heading_outline": "DISCIPLESHIP.",
+    "paragraph_one": "Worship has been part of our lives in song, prayer, service, and the quiet choices nobody sees. We believe the Word of God belongs in real conversations and ordinary days—not only behind a pulpit.",
+    "paragraph_two": "Parenthood has deepened our gratitude and our sense of responsibility. We want to raise a family and help build a church where faith is practiced at home, grace is extended freely, and people grow together.",
+    "paragraph_three": "We are not interested in religion as usual—activity without relationship, polished words without honest conversation, or a room full of people who still feel alone."
+  },
+  "friendship": {
+    "eyebrow": "05 / THE INVITATION",
+    "heading_first": "HE CALLS US",
+    "heading_outline": "FRIEND.",
+    "heading_second": "SO WE CALL",
+    "heading_last": "YOU FRIEND.",
+    "reference": "JOHN 15:15",
+    "lead": "If you are looking for a place to ask questions, laugh, be honest, or simply be yourself, we would love to meet you.",
+    "paragraph": "There is no pressure to have everything figured out. Let’s start with a real conversation. Tell us your story, and we’ll share ours.",
+    "coffee_title": "COFFEE’S ON US.",
+    "coffee_description": "No agenda. No sales pitch. Just two people who would love to get to know you.",
+    "button_label": "Let’s get coffee",
+    "button_url": "mailto:risecitynow@gmail.com?subject=Coffee%20with%20Rich%20and%20Kim",
+    "secondary_label": "Explore Rise City",
+    "secondary_url": "index.html#our-story"
+  },
+  "design": {
+    "hero_background": "#F5F5F5",
+    "content_background": "#FFFFFF",
+    "soft_background": "#F1F1F1",
+    "dark_background": "#090909",
+    "dark_text": "#FFFFFF",
+    "photo_background": "#FFFFFF",
+    "hero_width": 1240,
+    "hero_top_space": 88,
+    "hero_bottom_space": 74,
+    "show_roots": true,
+    "show_professional": true,
+    "show_faith": true,
+    "show_friendship": true
+  }
+}
