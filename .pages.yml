@@ -3136,3 +3136,89 @@ content:
       label: Events Photo Saturation (0–120%)
       type: number
       description: Controls the intensity of the photo colors.
+# Append this collection entry at the END of your EXISTING .pages.yml file.
+# Do not replace your live YAML: the live file already has important customizations.
+- name: connect
+  label: 08 • CONNECT — Connection Card & Email Delivery
+  type: file
+  path: content/connect.json
+  format: json
+  fields:
+  - name: page
+    label: Connect page — Hero and introduction
+    type: object
+    fields:
+    - {name: browser_title, label: Browser tab title, type: string}
+    - {name: meta_description, label: Search description, type: text}
+    - {name: eyebrow, label: Hero small label, type: string}
+    - {name: title_first, label: Hero main heading, type: string}
+    - {name: title_outlined, label: Hero outlined heading, type: string}
+    - {name: intro, label: Hero introduction, type: text}
+    - {name: callout_title, label: Small callout heading, type: string}
+    - {name: callout_text, label: Small callout paragraph, type: text}
+    - {name: microcopy, label: Top right caption, type: string}
+  - name: form
+    label: Connection form — Questions and labels
+    type: object
+    fields:
+    - {name: eyebrow, label: Form small heading, type: string}
+    - {name: heading, label: Form large heading, type: string}
+    - {name: description, label: Form introduction, type: text}
+    - {name: first_name_label, label: First name label, type: string}
+    - {name: last_name_label, label: Last name label, type: string}
+    - {name: email_label, label: Email label, type: string}
+    - {name: phone_label, label: Phone label, type: string}
+    - {name: reason_label, label: Interest dropdown label, type: string}
+    - {name: reason_placeholder, label: Interest dropdown placeholder, type: string}
+    - name: reasons
+      label: Dropdown options — customize the ways people can connect
+      type: string
+      list:
+        min: 1
+        max: 20
+        collapsible:
+          collapsed: false
+    - {name: message_label, label: Message box label, type: string}
+    - {name: message_placeholder, label: Message box placeholder, type: string}
+    - {name: submit_label, label: Submit button wording, type: string}
+    - {name: privacy_text, label: Form privacy note, type: text}
+    - {name: required_hint, label: Required field hint, type: string}
+    - {name: show_phone, label: Show optional phone field, type: boolean}
+    - {name: show_message, label: Show optional message field, type: boolean}
+    - {name: show_privacy_note, label: Show privacy note, type: boolean}
+  - name: delivery
+    label: Email delivery — FormSubmit
+    type: object
+    fields:
+    - name: recipient_email
+      label: Destination inbox — requires one-time verification
+      type: string
+      required: true
+      description: A new email address must confirm FormSubmit activation before receiving submissions.
+    - {name: email_subject, label: Email subject line, type: string}
+    - name: thank_you_url
+      label: Confirmation page URL
+      type: string
+      description: Defaults to https://risecity.now/connect-thanks.html. Only the Rise City thank-you page is accepted.
+    - {name: captcha_enabled, label: Keep spam protection (recommended), type: boolean}
+    - {name: service_description, label: Administrative delivery notes, type: text}
+  - name: closing
+    label: Closing section — Invitation and return link
+    type: object
+    fields:
+    - {name: eyebrow, label: Closing label, type: string}
+    - {name: title, label: Closing heading, type: string}
+    - {name: message, label: Closing paragraph, type: text}
+    - {name: return_label, label: Return link text, type: string}
+    - {name: return_url, label: Return link URL, type: string}
+  - name: design
+    label: Connect page — Colors and visibility
+    type: object
+    fields:
+    - {name: page_background, label: Page background hex, type: string}
+    - {name: panel_background, label: Form panel background hex, type: string}
+    - {name: divider_color, label: Dividers / input borders hex, type: string}
+    - {name: muted_text, label: Secondary text hex, type: string}
+    - {name: form_max_width, label: Form width px on tablet, type: number}
+    - {name: show_callout, label: Show personal invitation callout, type: boolean}
+    - {name: show_closing, label: Show closing section, type: boolean}
