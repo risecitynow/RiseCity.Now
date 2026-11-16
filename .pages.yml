@@ -1,6 +1,3 @@
-# Rise City merged CMS — original 491 field definitions retained unchanged.
-# 78 Give-page field definitions appended. Six editors total.
-# Upload to repository root as .pages.yml.
 # Rise City — EXPANDED Pages CMS config
 # Place at repository root as .pages.yml (leading dot required).
 # Each field below saves to a real content/*.json property.
@@ -2856,6 +2853,270 @@ content:
       type: boolean
     - name: show_safety_note
       label: Show recipient verification warning
+      type: boolean
+    - name: show_bottom_cta
+      label: Show the closing invitation
+      type: boolean
+
+- name: events
+  label: 07 • EVENTS — Gatherings, Cards, Photos & FAQs
+  type: file
+  path: content/events.json
+  format: json
+  fields:
+  - name: page
+    label: Events page — headline, meta & status
+    type: object
+    fields:
+    - name: browser_title
+      label: Browser tab title
+      type: string
+    - name: meta_description
+      label: Search description
+      type: text
+    - name: nav_label
+      label: Events link label
+      type: string
+    - name: show_in_navigation
+      label: Show Events in the navigation
+      type: boolean
+    - name: show_in_footer
+      label: Show Events in the footer
+      type: boolean
+    - name: eyebrow
+      label: Small eyebrow above hero
+      type: string
+    - name: headline
+      label: Main hero word
+      type: string
+    - name: outline_word
+      label: Outlined hero phrase
+      type: string
+    - name: intro
+      label: Hero introduction
+      type: text
+    - name: scroll_label
+      label: Hero scroll link label
+      type: string
+    - name: status_kicker
+      label: Status kicker
+      type: string
+    - name: status_text
+      label: Status panel message
+      type: text
+  - name: featured
+    label: Featured ministries — cards, summaries, photos & colors
+    type: object
+    fields:
+    - name: eyebrow
+      label: Section small label
+      type: string
+    - name: title
+      label: Section heading
+      type: string
+    - name: introduction
+      label: Section intro
+      type: text
+    - name: items
+      label: Featured event cards
+      type: object
+      fields:
+      - name: rise_word
+        label: Bold logo word
+        type: string
+      - name: name
+        label: Ministry name
+        type: string
+      - name: eyebrow
+        label: Event type / descriptor
+        type: string
+      - name: status
+        label: Date or status pill
+        type: string
+      - name: summary
+        label: Short event summary
+        type: text
+      - name: highlight
+        label: Highlight line
+        type: string
+      - name: cta_label
+        label: Card button label
+        type: string
+      - name: cta_url
+        label: Card button URL or anchor
+        type: string
+      - name: image
+        label: Card image path
+        type: string
+        description: Use a site-relative image path like assets/rise-anywhere-placeholder.png.
+      - name: image_alt
+        label: Card image alt text
+        type: string
+      - name: accent
+        label: Accent color
+        type: string
+        description: Use a hexadecimal color value, e.g. #526BFF.
+      - name: accent_soft
+        label: Soft accent background
+        type: string
+        description: Use a hexadecimal color value, e.g. #E9EDFF.
+      - name: logo_text
+        label: Logo secondary text color
+        type: string
+        description: Use a hexadecimal color value, e.g. #1B1F3B.
+      - name: bullets
+        label: Three quick bullet points
+        type: string
+        list:
+          min: 3
+          max: 3
+          collapsible:
+            collapsed: false
+            summary: '{index} — {value}'
+      list:
+        min: 3
+        max: 3
+        collapsible:
+          collapsed: false
+          summary: '{index} — {name}'
+  - name: experience
+    label: What to expect — section and cards
+    type: object
+    fields:
+    - name: eyebrow
+      label: Section small label
+      type: string
+    - name: title_first
+      label: First headline line
+      type: string
+    - name: title_outlined
+      label: Outlined headline line
+      type: string
+    - name: introduction
+      label: Section introduction
+      type: text
+    - name: items
+      label: Experience cards
+      type: object
+      fields:
+      - name: number
+        label: Number
+        type: string
+      - name: title
+        label: Title
+        type: string
+      - name: description
+        label: Description
+        type: text
+      list:
+        min: 3
+        max: 3
+        collapsible:
+          collapsed: false
+          summary: '{index} — {title}'
+  - name: faq
+    label: Event FAQs
+    type: object
+    fields:
+    - name: eyebrow
+      label: FAQ small label
+      type: string
+    - name: title
+      label: FAQ title
+      type: string
+    - name: items
+      label: Event questions and answers
+      type: object
+      fields:
+      - name: question
+        label: Question
+        type: string
+      - name: answer
+        label: Answer
+        type: text
+      list:
+        min: 4
+        max: 8
+        collapsible:
+          collapsed: true
+          summary: '{index} — {question}'
+  - name: bottom
+    label: Closing invitation
+    type: object
+    fields:
+    - name: eyebrow
+      label: Closing small label
+      type: string
+    - name: title
+      label: Closing headline
+      type: string
+    - name: description
+      label: Closing paragraph
+      type: text
+    - name: primary_text
+      label: Main button text
+      type: string
+    - name: primary_url
+      label: Main button URL
+      type: string
+    - name: secondary_text
+      label: Secondary link text
+      type: string
+    - name: secondary_url
+      label: Secondary link URL
+      type: string
+  - name: design
+    label: Events page — Colors, layout & visibility
+    type: object
+    fields:
+    - name: page_bg
+      label: Page background
+      type: string
+      description: Use a hexadecimal color value, e.g. #F5F5F3.
+    - name: hero_bg
+      label: Hero background
+      type: string
+      description: Use a hexadecimal color value, e.g. #F5F5F3.
+    - name: panel_bg
+      label: Status panel background
+      type: string
+      description: Use a hexadecimal color value, e.g. #FFFFFF.
+    - name: card_bg
+      label: Event and content card background
+      type: string
+      description: Use a hexadecimal color value, e.g. #FFFFFF.
+    - name: text_color
+      label: Main text color
+      type: string
+      description: Use a hexadecimal color value, e.g. #101010.
+    - name: muted_color
+      label: Secondary text color
+      type: string
+      description: Use a hexadecimal color value, e.g. #5B5B57.
+    - name: line_color
+      label: Divider color
+      type: string
+      description: Use a hexadecimal color value, e.g. #D7D7D3.
+    - name: hero_spacing_desktop
+      label: Hero bottom spacing — desktop px
+      type: number
+    - name: hero_spacing_mobile
+      label: Hero bottom spacing — mobile px
+      type: number
+    - name: content_width
+      label: Max content width in pixels
+      type: number
+    - name: cards_per_row
+      label: Event cards per row on desktop (1–3)
+      type: number
+    - name: show_status_panel
+      label: Show the hero status panel
+      type: boolean
+    - name: show_experience
+      label: Show the what to expect section
+      type: boolean
+    - name: show_faq
+      label: Show the event FAQ section
       type: boolean
     - name: show_bottom_cta
       label: Show the closing invitation
