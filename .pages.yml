@@ -3121,3 +3121,18 @@ content:
     - name: show_bottom_cta
       label: Show the closing invitation
       type: boolean
+
+    - name: photo_opacity_percent
+      label: Events Photo Opacity (0–80%)
+      type: number
+      description: Controls how visible the event photos appear.
+
+    - name: photo_blur_px
+      label: Events Photo Blur (0–10 px)
+      type: number
+      description: Enter 0 for sharp photos or a higher number for blur.
+
+    - name: photo_saturation_percent
+      label: Events Photo Saturation (0–120%)
+      type: number
+      description: Controls the intensity of the photo colors.
