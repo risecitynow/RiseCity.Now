@@ -32,7 +32,11 @@
         "accent": "#8C725E",
         "accent_soft": "#F3EEE9",
         "logo_text": "#51473F",
-        "bullets": []
+        "bullets": [
+          "Worship",
+          "Word",
+          "Walk"
+        ]
       },
       {
         "rise_word": "RISE",
@@ -48,7 +52,11 @@
         "accent": "#9F7667",
         "accent_soft": "#F5EEEA",
         "logo_text": "#5A443B",
-        "bullets": []
+        "bullets": [
+          "Faith",
+          "Fellowship",
+          "Family"
+        ]
       },
       {
         "rise_word": "RISE",
@@ -64,7 +72,11 @@
         "accent": "#6D7C66",
         "accent_soft": "#EBEEE9",
         "logo_text": "#41513E",
-        "bullets": []
+        "bullets": [
+          "Bible",
+          "Believe",
+          "Belong"
+        ]
       }
     ]
   },
@@ -133,13 +145,13 @@
     "hero_spacing_desktop": 68,
     "hero_spacing_mobile": 54,
     "content_width": 1240,
+    "cards_per_row": 3,
     "show_status_panel": true,
     "show_experience": true,
     "show_faq": true,
     "show_bottom_cta": true,
-    "cards_per_row": 3,
     "photo_opacity_percent": 49,
-    "photo_blur_px": 2.7,
-    "photo_saturation_percent": 72
+    "photo_blur_px": 1.5,
+    "photo_saturation_percent": 90
   }
 }
