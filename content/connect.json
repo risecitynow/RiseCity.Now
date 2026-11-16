@@ -1,0 +1,64 @@
+{
+  "page": {
+    "browser_title": "Connect | Rise City",
+    "meta_description": "Connect with Rise City. Share a prayer request, ask about Bible study or baptism, or take your next step.",
+    "eyebrow": "GET CONNECTED / RISE CITY",
+    "title_first": "YOUR NEXT",
+    "title_outlined": "STEP STARTS HERE.",
+    "intro": "We would love to get to know you. Whether you are new, have a prayer request, or want to explore your next step with Jesus, there is a place for you here.",
+    "callout_title": "EVERY STORY MATTERS.",
+    "callout_text": "We believe faith grows through meaningful connection. Tell us a little about yourself, and someone from Rise City can follow up.",
+    "microcopy": "A FEW DETAILS. LESS THAN A MINUTE."
+  },
+  "form": {
+    "eyebrow": "01 / CONNECTION CARD",
+    "heading": "LET’S CONNECT.",
+    "description": "Complete this brief form and we’ll know how best to reach you.",
+    "first_name_label": "First name",
+    "last_name_label": "Last name",
+    "email_label": "Email address",
+    "phone_label": "Phone number (optional)",
+    "reason_label": "I’d like to…",
+    "reason_placeholder": "Choose what brings you here",
+    "reasons": [
+      "Learn more about Rise City",
+      "Request prayer",
+      "Join a Bible study",
+      "Learn about baptism",
+      "Learn about upcoming events",
+      "Get involved or serve",
+      "Ask a question"
+    ],
+    "message_label": "Anything else you’d like us to know? (optional)",
+    "message_placeholder": "A few words are enough.",
+    "submit_label": "SEND CONNECTION CARD",
+    "privacy_text": "Your information is used to respond to your request. Please don’t include medical, financial, or other sensitive details.",
+    "required_hint": "* Required information",
+    "show_phone": true,
+    "show_message": true,
+    "show_privacy_note": true
+  },
+  "delivery": {
+    "recipient_email": "risecitynow@gmail.com",
+    "email_subject": "New Rise City Connection Card",
+    "thank_you_url": "https://risecity.now/connect-thanks.html",
+    "captcha_enabled": true,
+    "service_description": "Submissions are securely sent through FormSubmit to the Rise City email inbox. A one-time email confirmation is required to activate delivery."
+  },
+  "closing": {
+    "eyebrow": "FAITH. COMMUNITY. PURPOSE.",
+    "title": "RISE IN FAITH. WALK WITH CHRIST.",
+    "message": "We’re glad you’re taking this step.",
+    "return_label": "EXPLORE RISE CITY",
+    "return_url": "index.html"
+  },
+  "design": {
+    "page_background": "#faf9f7",
+    "panel_background": "#ffffff",
+    "divider_color": "#dededb",
+    "muted_text": "#555553",
+    "form_max_width": 620,
+    "show_callout": true,
+    "show_closing": true
+  }
+}
