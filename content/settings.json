@@ -1,18 +1,17 @@
 {
   "images": {
-    "hero_banner": "assets/rise-city-hero.webp",
-    "mobile_wordmark": "assets/rise-city-wordmark.png",
-    "people_photo": "assets/rise-city-people.webp",
-    "monogram": "assets/rc-monogram.png",
-    "social_preview": "assets/rise-city-social.jpg",
-    "favicon": "assets/favicon.png"
+    "hero_banner": "/assets/rise-city-hero.webp",
+    "mobile_wordmark": "/assets/rise-city-wordmark.png",
+    "people_photo": "/assets/rise-city-people.webp",
+    "monogram": "/assets/rc-monogram.png",
+    "social_preview": "/assets/rise-city-social.jpg",
+    "favicon": "/assets/favicon.png"
   },
   "contact": {
-    "email": "",
-    "phone": "",
-    "instagram": "",
-    "facebook": "",
-    "youtube": "",
-    "giving_url": ""
+    "email": "risecitynow@gmail.com",
+    "instagram": "https://www.instagram.com/risecity.now/",
+    "facebook": "https://www.facebook.com/profile.php?id=61596300098045",
+    "youtube": "https://www.youtube.com/@RiseCityNow",
+    "giving_url": "https://risecity.now/give.html"
   }
 }
