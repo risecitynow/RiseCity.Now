@@ -38,3 +38,17 @@
 /* Background, logo, header and footer are inherited from styles.css / CMS without page overrides. */
 @media(max-width:1000px){.connect-layout{grid-template-columns:1fr}.connect-copy{padding-top:0}.connect-lead{margin-bottom:30px}.connect-side-note{margin-bottom:4px}.connect-form-panel{max-width:var(--connect-form-width,620px)}}
 @media(max-width:600px){.connect-intro{padding:35px 0 60px}.connect-topline{margin-bottom:31px;align-items:start}.connect-topline>span:last-child{display:none}.connect-copy h1{font-size:clamp(45px,11vw,67px);margin-bottom:24px}.connect-lead{font-size:16px}.connect-form-row{grid-template-columns:1fr}.connect-form-panel{padding:22px}.connect-form-actions{align-items:stretch;flex-direction:column}.connect-submit{width:100%;justify-content:space-between}.connect-closing{padding:49px 0 56px}}
+
+/* Original homepage connection section, reused rather than redesigned.
+   All colors, type, grid, breakpoints and footer styles are inherited from styles.css. */
+.page-connect .connect-cta-row{margin-top:30px}
+.page-connect #connect-closing .connect-grid{min-width:0}
+.page-connect #connect-closing .connect-right{min-width:0}
+.page-connect #connect-closing .social-links a{white-space:nowrap}
+.page-connect #connect-closing .btn-white{display:inline-flex}
+.page-connect #connect-closing[hidden],
+.page-connect #connect-original-closing[hidden]{display:none!important}
+@media(max-width:650px){
+ .page-connect .connect-cta-row{margin-top:26px}
+ .page-connect #connect-closing .connect-grid h2{overflow-wrap:normal}
+}

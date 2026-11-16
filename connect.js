@@ -41,7 +41,11 @@
     for(const [key,variable] of Object.entries(palette))if(color.test(d[key]||''))root.style.setProperty(variable,d[key]);
     const width=Number(d.form_max_width);if(Number.isFinite(width)&&width>=400&&width<=900)root.style.setProperty('--connect-form-width',width+'px');
     if(typeof d.show_callout==='boolean')q('#connect-callout').hidden=!d.show_callout;
+    // The existing closing visibility toggle now controls the dark homepage-style block.
     if(typeof d.show_closing==='boolean')q('#connect-closing').hidden=!d.show_closing;
+    // Keep the original light closing available for legacy CMS content, but off by default.
+    const original=q('#connect-original-closing');
+    if(original)original.hidden=d.show_original_closing!==true;
     applyQueryInterest();
   }
   function applyQueryInterest(){
