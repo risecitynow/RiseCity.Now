@@ -1,0 +1,91 @@
+/* Rise City GIVE page — consistent with the existing monochrome design. */
+.page-give { background:var(--give-page,#f5f5f5); color:var(--give-ink,#111); }
+.page-give .give-hero,.page-give .give-zelle-area,.page-give .give-how,.page-give .give-faq {background:var(--give-page,#f5f5f5)}
+.page-give :is(.give-hero,.give-zelle-area,.give-how,.give-impact,.give-faq,.give-bottom) {scroll-margin-top:110px}
+.give-eyebrow,.give-kicker {font-weight:800;font-size:11px;letter-spacing:.19em;line-height:1.45}
+.give-kicker {display:flex;align-items:center;gap:12px}
+.give-kicker:before{content:"";display:block;width:25px;height:1px;background:currentColor}
+.give-hero{padding:60px 0 var(--give-hero-space,95px);border-bottom:1px solid var(--give-rule,#ddd)}
+.give-hero-top{display:flex;justify-content:space-between;gap:25px;align-items:center}
+.give-hero-no{font-size:11px;letter-spacing:.17em;font-weight:800;color:var(--give-muted,#555)}
+.give-hero-layout{display:grid;grid-template-columns:1.13fr .87fr;gap:80px;align-items:end;margin-top:55px}
+.give-hero h1{font-family:var(--cms-headfont,'Manrope',Arial,sans-serif);font-weight:800;letter-spacing:-.09em;font-size:clamp(70px,9.2vw,148px);line-height:.91;margin:0;overflow-wrap:anywhere}
+.give-hero h1 em,.give-impact h2 em{font-style:normal;color:transparent;-webkit-text-stroke:1.6px var(--give-ink,#111)}
+.give-hero-intro{padding-bottom:9px}
+.give-hero-intro p{font-size:clamp(17px,1.6vw,21px);font-weight:600;line-height:1.65;max-width:460px}
+.give-text-link{display:inline-flex;gap:25px;align-items:center;font-weight:800;font-size:13px;border-bottom:1px solid currentColor;padding:0 0 9px;margin-top:32px}
+.give-text-link [aria-hidden]{font-size:21px;line-height:1}
+.give-zelle-area{padding:100px 0 120px}
+.give-zelle-grid{display:grid;grid-template-columns:.86fr 1.14fr;gap:clamp(50px,7vw,120px);align-items:center}
+.give-zelle-info h2,.give-intro-row h2,.give-faq h2{font-size:clamp(50px,5.5vw,82px);font-weight:800;font-family:var(--cms-headfont,'Manrope',Arial,sans-serif);letter-spacing:-.08em;line-height:1.02;margin:26px 0}
+.give-zelle-info>p{font-size:17px;line-height:1.7;color:var(--give-muted,#555);max-width:480px}
+.give-safe-aside{display:flex;gap:13px;margin-top:48px;padding-top:23px;border-top:1px solid var(--give-rule,#ddd);color:var(--give-muted,#555);font-size:13px;line-height:1.65}
+.give-safe-icon{font-size:22px;color:var(--give-ink,#111)}
+.give-payment-card{background:var(--give-panel,#101010);color:var(--give-panel-text,#fff);padding:clamp(26px,4vw,52px);box-shadow:0 24px 54px #00000013}
+.give-pay-card-top{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff55;padding-bottom:36px;gap:24px}
+.give-pay-card-top span,.give-pay-email>span{font-size:11px;letter-spacing:.18em;font-weight:800}
+.give-pay-card-top b{font-size:30px;font-weight:800;letter-spacing:-.08em}
+.give-pay-email{padding:40px 0 43px;display:flex;flex-direction:column;gap:20px}
+.give-pay-email strong{font-size:clamp(22px,2.4vw,32px);letter-spacing:-.06em;overflow-wrap:anywhere;line-height:1.2}
+.give-pay-actions{display:flex;gap:10px;flex-wrap:wrap}
+.give-copy-btn,.give-second-btn{font-size:12px;font-weight:800;min-height:52px;padding:13px 16px;display:inline-flex;gap:18px;align-items:center;justify-content:center;cursor:pointer;border:1px solid #fff}
+.give-copy-btn{background:#fff;color:#111;flex:1}
+.give-second-btn{background:transparent;color:#fff}
+.give-copy-btn:hover{background:#e2e2e2}
+.give-payment-warning{font-size:12px;line-height:1.6;margin-top:27px;padding-top:22px;border-top:1px solid #ffffff55;color:#f2f2f2}
+.give-payment-warning span[aria-hidden]{margin-right:6px}
+.give-intro-row{display:flex;gap:40px;align-items:end;justify-content:space-between;margin:12px 0 40px}
+.give-intro-row h2{margin-bottom:0}
+.give-intro-row>p{color:var(--give-muted,#555);max-width:340px;font-size:16px}
+.give-steps-grid{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--give-rule,#ddd)}
+.give-step{padding:27px 24px 32px;border-right:1px solid var(--give-rule,#ddd);min-height:265px;background:var(--give-card,#fff)}
+.give-step:last-child{border-right:0}
+.give-step>span{display:block;font-size:12px;letter-spacing:.15em;font-weight:800;color:var(--give-muted,#555);margin-bottom:65px}
+.give-step h3{font-size:21px;letter-spacing:-.04em;line-height:1.2;margin:0 0 16px}
+.give-step p{font-size:14px;color:var(--give-muted,#555);line-height:1.65}
+.give-steps-note{margin-top:25px;color:var(--give-muted,#555);font-size:13px}
+.give-impact{background:#eaeaea}
+.give-impact-intro{display:flex;justify-content:space-between;gap:50px;align-items:end;margin:27px 0 55px}
+.give-impact h2{font-family:var(--cms-headfont,'Manrope',Arial,sans-serif);font-size:clamp(50px,7vw,105px);line-height:1;letter-spacing:-.09em;margin:0}
+.give-impact-intro>p{max-width:390px;font-size:16px;color:var(--give-muted,#555)}
+.give-impact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.give-impact-card{background:var(--give-card,#fff);padding:31px;min-height:335px;display:flex;flex-direction:column}
+.give-impact-card>span:first-child{font-size:11px;letter-spacing:.15em;font-weight:800;color:var(--give-muted,#555)}
+.give-impact-card h3{font-family:var(--cms-headfont,'Manrope',Arial,sans-serif);font-size:30px;letter-spacing:-.055em;line-height:1.15;margin:75px 0 15px}
+.give-impact-card p{font-size:15px;color:var(--give-muted,#555);max-width:300px}
+.give-impact-arrow{font-size:20px;align-self:end;margin-top:auto}
+.give-scripture{background:#090909;color:#fff;padding:115px 0}
+.give-kicker-light{color:#cccccc}
+.give-scripture h2{font-family:var(--cms-headfont,'Manrope',Arial,sans-serif);font-size:clamp(48px,7vw,100px);max-width:1030px;line-height:1.1;letter-spacing:-.065em;margin:39px 0 52px}
+.give-verse-bottom{display:flex;justify-content:space-between;gap:50px;padding-top:25px;border-top:1px solid #505050;align-items:start}
+.give-verse-bottom span{font-size:11px;letter-spacing:.15em;font-weight:800;color:#ddd}
+.give-verse-bottom p{max-width:490px;font-size:15px;color:#d5d5d5}
+.give-faq-layout{display:grid;grid-template-columns:.75fr 1.25fr;gap:75px}
+.give-faq h2{font-size:clamp(42px,4.8vw,64px);overflow-wrap:anywhere}
+.give-faq-list details{border-top:1px solid var(--give-rule,#ddd)}
+.give-faq-list details:last-child{border-bottom:1px solid var(--give-rule,#ddd)}
+.give-faq-list summary{cursor:pointer;display:flex;align-items:center;gap:14px;justify-content:space-between;padding:23px 0;font-weight:800;font-size:17px;list-style:none;line-height:1.35}
+.give-faq-list summary::-webkit-details-marker{display:none}
+.give-faq-plus{font-size:26px;font-weight:400;transition:transform .2s}
+.give-faq-list details[open] .give-faq-plus{transform:rotate(45deg)}
+.give-faq-list details p{padding:0 45px 25px 0;color:var(--give-muted,#555);font-size:15px;line-height:1.72}
+.give-bottom{background:#ededed;padding:105px 0 120px;text-align:center}
+.give-bottom-inner{display:flex;flex-direction:column;align-items:center}
+.give-bottom h2{font-size:clamp(42px,6vw,88px);letter-spacing:-.075em;font-family:var(--cms-headfont,'Manrope',Arial,sans-serif);line-height:1.03;margin:25px 0}
+.give-bottom p{max-width:540px;font-size:17px;color:var(--give-muted,#555)}
+.give-bottom-actions{display:flex;gap:25px;align-items:center;justify-content:center;flex-wrap:wrap;margin-top:30px}
+.give-bottom .give-text-link{margin:0}
+.page-give .footer{border-top:0}
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:1000px){.give-hero-layout{gap:42px}.give-steps-grid{grid-template-columns:repeat(2,1fr)}.give-step:nth-child(2){border-right:0}.give-step:nth-child(-n+2){border-bottom:1px solid var(--give-rule,#ddd)}.give-impact-intro{display:block}.give-impact-intro>p{margin-top:22px}}
+@media(max-width:760px){.give-hero{padding:45px 0 var(--give-hero-mobile-space,62px)}.give-hero-top{align-items:start}.give-hero-no{display:none}.give-hero-layout{display:block;margin-top:40px}.give-hero h1{font-size:clamp(52px,11vw,90px)}.give-hero-intro{margin-top:27px}.give-hero-intro p{font-size:16px}.give-zelle-area{padding:65px 0 80px}.give-zelle-grid,.give-faq-layout{display:block}.give-zelle-info{margin-bottom:33px}.give-zelle-info h2,.give-intro-row h2,.give-faq h2{font-size:clamp(43px,10vw,65px)}.give-safe-aside{margin-top:25px}.give-intro-row{display:block}.give-intro-row>p{margin-top:16px}.give-impact-grid{display:block}.give-impact-card{margin-bottom:12px;min-height:260px}.give-impact-card h3{margin-top:38px}.give-scripture{padding:75px 0}.give-verse-bottom{display:block}.give-verse-bottom p{margin-top:17px}.give-faq-list{margin-top:35px}.give-bottom{padding:70px 0 85px}.give-hero h1 em{-webkit-text-stroke-width:1.2px}}
+@media(max-width:460px){.give-pay-email strong{font-size:clamp(19px,6.2vw,27px)}.give-payment-card{padding:26px 21px}.give-pay-actions{display:flex;flex-direction:column}.give-steps-grid{display:block}.give-step{border-right:0;border-bottom:1px solid var(--give-rule,#ddd);min-height:210px}.give-step:last-child{border-bottom:0}.give-step>span{margin-bottom:36px}.give-faq-list summary{font-size:15px}.give-hero h1{font-size:clamp(47px,10.9vw,70px)}}
+
+/* Accessible footer fallback on the default pale background.
+   CSS variables from Appearance / Pages CMS still take priority on publish. */
+.page-give .footer {color:var(--cms-footer-ink,#111111)}
+.page-give .footer .footer-motto,
+.page-give .footer .footer-motto span,
+.page-give .footer .footer-bottom a {color:var(--cms-footer-ink,#111111)}
+.page-give .footer .footer-bottom {color:var(--cms-footer-muted,#555555);border-top-color:var(--cms-footer-rule,rgba(0,0,0,.20))}
+.page-give .footer .footer-top img {filter:var(--cms-footer-logo-filter,none)}
