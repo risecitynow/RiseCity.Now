@@ -1,0 +1,1 @@
+Replace only page-links.js at the root of the RiseCity.Now repository. The Meet page coffee button now sits next to Get to know us, wrapping on narrow screens. Its booking destination and label are loaded from content/meet-rich-and-kim.json. The homepage and Connect page buttons remain unchanged. No HTML, CSS, JSON or YAML replacement is required.

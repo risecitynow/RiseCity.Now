@@ -159,15 +159,17 @@
       .rise-coffee-outline:hover {
         background:var(--cms-ink,#101010);color:var(--cms-bg,#fff);
       }
-      .page-meet-rich-kim .meet-overline {flex-wrap:wrap;}
-      .page-meet-rich-kim .meet-overline .rise-meet-top-coffee {
-        margin-left:auto;flex:0 0 auto;white-space:nowrap;
+      .page-meet-rich-kim .rise-meet-intro-actions {
+        display:flex;align-items:center;flex-wrap:wrap;gap:12px 24px;
+      }
+      .page-meet-rich-kim .rise-meet-intro-actions .rise-meet-top-coffee {
+        margin:0;flex:0 0 auto;max-width:100%;white-space:normal;
         text-decoration:none;letter-spacing:.02em;font-size:12px;
       }
       @media(max-width:650px) {
         .rise-story-actions {align-items:stretch;}
         .rise-story-actions>.btn {min-height:48px;flex:1 1 190px;}
-        .page-meet-rich-kim .meet-overline .rise-meet-top-coffee {
+        .page-meet-rich-kim .rise-meet-intro-actions .rise-meet-top-coffee {
           min-height:43px;padding:0 14px;
         }
       }
@@ -221,14 +223,23 @@
     }
   }
 
-  // Top of the Meet Rich & Kim page, BEFORE the full-bleed hero photograph.
+  // Place the booking button immediately beside the existing Get to know us link.
   function ensureMeetTopCoffee() {
     if (!isPage(ABOUT)) return;
-    const overline=document.querySelector('.page-meet-rich-kim .meet-overline');
-    if (!overline) return;
-    if (!overline.querySelector('[data-rise-coffee-button="meet-top"]')) {
-      overline.append(createBookingButton('meet-top'));
+    const intro=document.querySelector('.page-meet-rich-kim .meet-hero-intro');
+    const journey=intro?.querySelector('a[href="#our-journey"]');
+    if (!journey) return;
+    let row=intro.querySelector('.rise-meet-intro-actions');
+    if (!row) {
+      row=document.createElement('div');
+      row.className='rise-meet-intro-actions';
+      journey.before(row);
+      row.append(journey);
     }
+    const buttons=[...document.querySelectorAll('[data-rise-coffee-button="meet-top"]')];
+    const coffee=buttons.shift() || createBookingButton('meet-top');
+    buttons.forEach(button=>button.remove());
+    if (coffee.parentElement!==row || coffee.previousElementSibling!==journey) journey.after(coffee);
   }
 
   function updateCoffeeButtons(url,label) {
@@ -238,6 +249,7 @@
       link.href=activeBookingUrl;
       const text=link.querySelector('.rise-coffee-button-label');
       if(text) text.textContent=activeBookingLabel;
+      link.setAttribute('aria-label', activeBookingLabel+' — opens calendar booking in a new tab');
     });
     const onConnect=document.getElementById('connect-coffee-booking-link');
     if(onConnect) onConnect.href=activeBookingUrl;
