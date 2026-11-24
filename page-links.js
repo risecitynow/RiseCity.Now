@@ -11,6 +11,8 @@
   };
   const ABOUT = 'meet-rich-and-kim.html';
   const DEFAULT_BOOKING = 'https://calendar.app.google/rResX4KfWwvQAiDc8';
+  let activeBookingUrl = DEFAULT_BOOKING;
+  let activeBookingLabel = 'Let’s Get Coffee';
   const pageName = () => location.pathname.split('/').pop() || 'index.html';
   const atHome = () => pageName() === 'index.html';
   const isPage = filename => pageName() === filename;
@@ -144,6 +146,31 @@
         color:var(--cms-ink,#101010);
       }
       .connect-coffee-invite .btn{white-space:normal;text-align:center}
+      /* Keep the new buttons within the existing monochrome Rise City design. */
+      .rise-story-actions {
+        margin-top:24px;display:flex;align-items:center;flex-wrap:wrap;
+        gap:12px;
+      }
+      .rise-story-actions>.btn {margin:0!important;gap:17px;max-width:100%;}
+      .rise-coffee-outline {
+        background:transparent;color:var(--cms-ink,#101010);
+        border:1px solid currentColor;text-decoration:none;
+      }
+      .rise-coffee-outline:hover {
+        background:var(--cms-ink,#101010);color:var(--cms-bg,#fff);
+      }
+      .page-meet-rich-kim .meet-overline {flex-wrap:wrap;}
+      .page-meet-rich-kim .meet-overline .rise-meet-top-coffee {
+        margin-left:auto;flex:0 0 auto;white-space:nowrap;
+        text-decoration:none;letter-spacing:.02em;font-size:12px;
+      }
+      @media(max-width:650px) {
+        .rise-story-actions {align-items:stretch;}
+        .rise-story-actions>.btn {min-height:48px;flex:1 1 190px;}
+        .page-meet-rich-kim .meet-overline .rise-meet-top-coffee {
+          min-height:43px;padding:0 14px;
+        }
+      }
     `;
     document.head.append(style);
   }
@@ -154,6 +181,68 @@
       return u.protocol === 'https:' && !u.username && !u.password ? u.href : null;
     } catch {return null;}
   }
+  // Reuse the single existing CMS booking URL on all coffee invitations.
+  function createBookingButton(context, outline=false) {
+    const link=document.createElement('a');
+    link.dataset.riseCoffeeButton=context;
+    link.href=activeBookingUrl;
+    link.target='_blank';
+    link.rel='noopener noreferrer';
+    link.className=outline?'btn rise-coffee-outline':'btn btn-black btn-small rise-meet-top-coffee';
+    link.setAttribute('aria-label','Let’s Get Coffee — opens calendar booking in a new tab');
+    const label=document.createElement('span');
+    label.className='rise-coffee-button-label';
+    label.textContent=activeBookingLabel;
+    const arrow=document.createElement('span');
+    arrow.textContent='↗';
+    arrow.setAttribute('aria-hidden','true');
+    link.append(label,arrow);
+    return link;
+  }
+
+  // Story already has a Meet Rich & Kim link. Place the new coffee CTA alongside it.
+  function ensureStoryCoffee() {
+    if (!atHome()) return;
+    const story=document.querySelector('#our-story .story-copy');
+    if (!story) return;
+    let row=story.querySelector('#rise-story-actions');
+    if (!row) {
+      const about=[...story.querySelectorAll('a.btn[href]')].find(a=>matchesPage(a,ABOUT));
+      if (!about) return; // Never create an unrelated floating button.
+      row=document.createElement('div');
+      row.id='rise-story-actions';
+      row.className='rise-story-actions';
+      about.before(row);
+      about.style.marginTop='0';
+      row.append(about);
+    }
+    if (!row.querySelector('[data-rise-coffee-button="story"]')) {
+      row.append(createBookingButton('story',true));
+    }
+  }
+
+  // Top of the Meet Rich & Kim page, BEFORE the full-bleed hero photograph.
+  function ensureMeetTopCoffee() {
+    if (!isPage(ABOUT)) return;
+    const overline=document.querySelector('.page-meet-rich-kim .meet-overline');
+    if (!overline) return;
+    if (!overline.querySelector('[data-rise-coffee-button="meet-top"]')) {
+      overline.append(createBookingButton('meet-top'));
+    }
+  }
+
+  function updateCoffeeButtons(url,label) {
+    if (url) activeBookingUrl=url;
+    if (typeof label==='string' && label.trim()) activeBookingLabel=label.trim();
+    document.querySelectorAll('[data-rise-coffee-button]').forEach(link=>{
+      link.href=activeBookingUrl;
+      const text=link.querySelector('.rise-coffee-button-label');
+      if(text) text.textContent=activeBookingLabel;
+    });
+    const onConnect=document.getElementById('connect-coffee-booking-link');
+    if(onConnect) onConnect.href=activeBookingUrl;
+  }
+
   function ensureCoffee() {
     if (!isPage('connect.html')) return;
     const parent = document.querySelector('.page-connect .connect-copy');
@@ -210,6 +299,9 @@
     ensureFooter(pages.events);
     ensureFooter(pages.give);
     ensureCoffee();
+    ensureStoryCoffee();
+    ensureMeetTopCoffee();
+    updateCoffeeButtons();
     updateActive();
   }
 
@@ -232,10 +324,7 @@
       }
     }
     const booking = safeBookingUrl(md?.friendship?.button_url);
-    if (booking) {
-      const link = document.getElementById('connect-coffee-booking-link');
-      if (link) link.href = booking;
-    }
+    updateCoffeeButtons(booking, md?.friendship?.button_label);
     install();
   }).catch(() => {});
 })();
