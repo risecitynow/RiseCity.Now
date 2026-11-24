@@ -340,3 +340,11 @@
     install();
   }).catch(() => {});
 })();
+
+/* Rise City privacy, terms and SMS consent add-on. */
+(() => {
+  if (document.querySelector('script[src="legal-links.js"]')) return;
+  const s = document.createElement('script');
+  s.src = 'legal-links.js';
+  document.head.appendChild(s);
+})();
